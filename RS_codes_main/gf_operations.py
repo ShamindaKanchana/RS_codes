@@ -1,3 +1,12 @@
+# Import gf_exp and gf_log from init_tables during initialization
+gf_exp = None
+gf_log = None
+
+def set_gf_tables(exp, log):
+    global gf_exp, gf_log
+    gf_exp = exp
+    gf_log = log
+
 def gf_add(x, y):
     return x ^ y
 
@@ -15,7 +24,7 @@ def cl_mul(x,y):
     return z
 
 
-def gf_mult_noLUT(x, y, prim=0):
+def gf_mult_noLUT(x, y, prim=0x11d):
     '''Multiplication in Galois Fields without using a precomputed look-up table (and thus it's slower)
     by using the standard carry-less multiplication + modular reduction using an irreducible prime polynomial'''
 
@@ -62,41 +71,37 @@ def gf_mult_noLUT(x, y, prim=0):
 
     return result
 
-
-
-
-
-
-
 def gf_mul(x,y):
+    if gf_exp is None or gf_log is None:
+        raise RuntimeError("Galois Field tables not initialized. Call set_gf_tables() first.")
     if x==0 or y==0:
         return 0
     return gf_exp[gf_log[x] + gf_log[y]] # should be gf_exp[(gf_log[x]+gf_log[y])%255] if gf_exp wasn't oversized
 
 def gf_div(x,y):
+    if gf_exp is None or gf_log is None:
+        raise RuntimeError("Galois Field tables not initialized. Call set_gf_tables() first.")
     if y==0:
         raise ZeroDivisionError()
     if x==0:
         return 0
     return gf_exp[(gf_log[x] + 255 - gf_log[y]) % 255]
 
-
 def gf_pow(x, power):
+    if gf_exp is None or gf_log is None:
+        raise RuntimeError("Galois Field tables not initialized. Call set_gf_tables() first.")
     return gf_exp[(gf_log[x] * power) % 255]
 
 def gf_inverse(x):
+    if gf_exp is None or gf_log is None:
+        raise RuntimeError("Galois Field tables not initialized. Call set_gf_tables() first.")
     return gf_exp[255 - gf_log[x]] # gf_inverse(x) == gf_div(1, x)
-
 
 def gf_poly_scale(p,x):
     r = [0] * len(p)
     for i in range(0, len(p)):
         r[i] = gf_mul(p[i], x)
     return r
-
-
-
-
 
 def gf_poly_add(p,q):
     r = [0] * max(len(p),len(q))
@@ -105,7 +110,6 @@ def gf_poly_add(p,q):
     for i in range(0,len(q)):
         r[i+len(r)-len(q)] ^= q[i]
     return r
-
 
 def gf_poly_mul(p,q):
     '''Multiply two polynomials, inside Galois Field'''
@@ -119,17 +123,12 @@ def gf_poly_mul(p,q):
                                                          # -- you can see it's your usual polynomial multiplication
     return r
 
-
-
 def gf_poly_eval(poly, x):
     '''Evaluates a polynomial in GF(2^p) given the value for x. This is based on Horner's scheme for maximum efficiency.'''
     y = poly[0]
     for i in range(1, len(poly)):
         y = gf_mul(y, x) ^ poly[i]
     return y
-
-
-
 
 def gf_poly_div(dividend, divisor):
     '''Fast polynomial division by using Extended Synthetic Division and optimized for GF(2^p) computations
