@@ -4,8 +4,6 @@ class ReedSolomonError(Exception):
     pass
 
 
-raise ReedSolomonError("Some error message")
-
 try:
     raise ReedSolomonError("Some error message")
 except ReedSolomonError as e:
@@ -45,9 +43,3 @@ def rs_encode_msg(msg_in, nsym):
     msg_out[:len(msg_in)] = msg_in
 
     return msg_out
-
-
-
-
-
-
