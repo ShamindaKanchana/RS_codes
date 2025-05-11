@@ -7,7 +7,7 @@ from gf_operations import set_gf_tables
 prim = 0x11d
 n = 20 # set the size you want, it must be > k, the remaining n-k symbols will be the ECC code (more is better)
 k = 11 # k = len(message)
-message = "hello world" # input message
+message = "My name is Shaminda" # input message
 
 # Initializing the log/antilog tables and setting them globally
 gf_exp, gf_log = init_tables(prim)
