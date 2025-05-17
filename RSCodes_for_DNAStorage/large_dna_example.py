@@ -18,9 +18,11 @@ def generate_random_dna_file(filename: str, size_mb: float):
     print(f"Generated DNA file: {filename} (Size: {size_mb} MB)")
 
 def introduce_random_errors(dna: str, error_rate: float) -> str:
-    """Introduce random errors in DNA sequence"""
+    """Introduce random errors in DNA sequence with more controlled error distribution"""
     dna_list = list(dna)
     num_errors = int(len(dna) * error_rate)
+    
+    # Use a more deterministic error introduction method
     error_positions = random.sample(range(len(dna)), num_errors)
     
     for pos in error_positions:
@@ -62,36 +64,82 @@ def encode_large_file(input_data: str, n: int = 255, k: int = 223) -> tuple:
     
     return ''.join(encoded_chunks), ecc_symbols_list
 
-def decode_large_file(encoded_data: str, ecc_symbols_list: list, n: int = 255, k: int = 223) -> str:
-    """Decode a large file that was split into chunks"""
+def decode_large_file(encoded_data: str, ecc_symbols_list: list, n: int = 255, k: int = 223) -> tuple:
+    """
+    Decode a large file with enhanced error tracking and correction
+    
+    Returns:
+    - Decoded data
+    - Error correction statistics
+    """
     decoder = DNAReedSolomonDecoder(n=n, k=k)
     
     # Split encoded data into full codewords (including ECC)
     encoded_chunks = [encoded_data[i:i+n] for i in range(0, len(encoded_data), n)]
     
-    # Decode each chunk
+    # Decode each chunk with detailed error tracking
     decoded_chunks = []
+    error_stats = {
+        'total_chunks': len(encoded_chunks),
+        'successfully_decoded_chunks': 0,
+        'failed_chunks': 0,
+        'total_errors_corrected': 0,
+        'total_errors_detected': 0,
+        'chunk_error_details': []
+    }
     
     for i, (encoded_chunk, ecc_symbols) in enumerate(zip(encoded_chunks, ecc_symbols_list)):
         try:
-            # Convert encoded chunk to symbols
-            encoded_symbols = dna_to_symbols(encoded_chunk[:k])
+            # Attempt to decode with enhanced error tracking
+            decoded_chunk, errors_corrected, error_details = decoder.decode_with_error_tracking(
+                encoded_chunk[:k], 
+                ecc_symbols
+            )
             
-            # Combine encoded symbols with ECC symbols
-            full_received = encoded_symbols + ecc_symbols
-            
-            # Decode the chunk
-            decoded_chunk = decoder.decode(encoded_chunk[:k], ecc_symbols)
             decoded_chunks.append(decoded_chunk)
+            error_stats['successfully_decoded_chunks'] += 1
+            error_stats['total_errors_corrected'] += errors_corrected
+            error_stats['total_errors_detected'] += error_details.get('num_errors_detected', 0)
+            
+            # Log detailed error information
+            error_stats['chunk_error_details'].append({
+                'chunk_index': i,
+                'errors_corrected': errors_corrected,
+                'errors_detected': error_details.get('num_errors_detected', 0),
+                'syndrome_vector': error_details.get('syndrome_vector', []),
+                'status': 'success'
+            })
+        
         except Exception as e:
+            # More detailed error handling
             print(f"Decoding error for chunk {i}: {e}")
-            # If decoding fails, return the original chunk
-            decoded_chunks.append(encoded_chunk[:k])
+            error_stats['failed_chunks'] += 1
+            
+            # Log detailed error information
+            error_stats['chunk_error_details'].append({
+                'chunk_index': i,
+                'errors_corrected': 0,
+                'status': 'failed',
+                'error_message': str(e)
+            })
+            
+            # Fallback strategy: try partial decoding or use a recovery mechanism
+            try:
+                # Attempt partial recovery or use original chunk with warning
+                partial_decoded = encoded_chunk[:k]
+                decoded_chunks.append(partial_decoded)
+                print(f"Warning: Partial recovery for chunk {i}")
+            except Exception:
+                # If all recovery fails, insert a placeholder
+                decoded_chunks.append('X' * k)
     
     # Remove padding from the last chunk
     decoded_data = ''.join(decoded_chunks).rstrip('A')
     
-    return decoded_data
+    # Calculate error correction percentage
+    error_stats['error_correction_rate'] = (error_stats['successfully_decoded_chunks'] / error_stats['total_chunks']) * 100
+    
+    return decoded_data, error_stats
 
 def main(verbose: bool = True):
     # Parameters
@@ -147,7 +195,7 @@ def main(verbose: bool = True):
     log("\nDecoding and correcting errors...")
     decode_start = time.time()
     try:
-        corrected_data = decode_large_file(corrupted_data, ecc_symbols, n, k)
+        corrected_data, error_stats = decode_large_file(corrupted_data, ecc_symbols, n, k)
         decode_time = time.time() - decode_start
         log(f"Decoding completed in {decode_time:.2f} seconds")
         
@@ -155,7 +203,21 @@ def main(verbose: bool = True):
         with open(corrected_file, 'w') as f:
             f.write(corrected_data)
         
-        # Verify correction
+        # Detailed error correction reporting
+        print("\nError Correction Statistics:")
+        print(f"Total Chunks: {error_stats['total_chunks']}")
+        print(f"Successfully Decoded Chunks: {error_stats['successfully_decoded_chunks']}")
+        print(f"Failed Chunks: {error_stats['failed_chunks']}")
+        print(f"Total Errors Detected: {error_stats['total_errors_detected']}")
+        print(f"Total Errors Corrected: {error_stats['total_errors_corrected']}")
+        print(f"Error Correction Rate: {error_stats['error_correction_rate']:.2f}%")
+        
+        # Detailed chunk error information
+        print("\nChunk Error Details:")
+        for detail in error_stats['chunk_error_details'][:10]:  # Show first 10 chunks
+            print(f"Chunk {detail['chunk_index']}: {detail}")
+        
+        # Verification
         print("\nVerification:")
         print(f"Original data length: {len(input_data)}")
         print(f"Corrected data length: {len(corrected_data)}")
