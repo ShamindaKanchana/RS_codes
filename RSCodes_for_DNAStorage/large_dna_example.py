@@ -145,18 +145,18 @@ def main(verbose: bool = True):
     # Parameters
     n = 255  # Codeword length
     k = 223  # Message length
-    dna_size_mb = 1  # Size in MB
+    dna_size_mb = 1.5  # Size in MB
     error_rate = 0.01  # 1% error rate
     
     # Create docs directory if it doesn't exist
     os.makedirs('docs', exist_ok=True)
     
     # File paths
-    input_file = 'docs/dna_input.txt'
-    encoded_file = 'docs/dna_encoded.txt'
-    ecc_file = 'docs/dna_ecc.txt'
-    corrupted_file = 'docs/dna_corrupted.txt'
-    corrected_file = 'docs/dna_corrected.txt'
+    input_file = 'docs/dna_input6.txt'
+    encoded_file = 'docs/dna_encoded6.txt'
+    ecc_file = 'docs/dna_ecc6.txt'
+    corrupted_file = 'docs/dna_corrupted6.txt'
+    corrected_file = 'docs/dna_corrected6.txt'
     
     # Optional logging
     def log(message):

@@ -26,8 +26,7 @@ mesecc[4] = 2
 mesecc[5] = 2
 print("Corrupted: %s" % mesecc)
 
-# Decoding/repairing the corrupted message, by providing the locations of a few erasures, we get below the Singleton Bound
-# Remember that the Singleton Bound is: 2*e+v <= (n-k)
+
 corrected_message, corrected_ecc = rs_correct_msg(mesecc, n-k, erase_pos=[0, 1, 2])
 print("Repaired: %s" % (corrected_message+corrected_ecc))
 print(''.join([chr(x) for x in corrected_message]))
