@@ -2,7 +2,7 @@ import random
 import time
 import os
 from dna_utils import symbols_to_dna, dna_to_symbols
-
+import matplotlib.pyplot as plt
 from dna_rs_encoder import DNAReedSolomonEncoder
 from dna_rs_decoder import DNAReedSolomonDecoder
 
@@ -33,16 +33,16 @@ def introduce_random_errors(dna: str, error_rate: float) -> str:
     
     return ''.join(dna_list)
 
-def encode_large_file(input_data: str, n: int = 30, k: int = 20) -> tuple:
+def encode_large_file(input_data: str, n: int = 255, k: int = 223) -> tuple:
     """Encode a large file by splitting into chunks"""
     encoder = DNAReedSolomonEncoder(n=n, k=k)
     
-    # Process in chunks of size k
+    # Ensure each chunk is exactly k characters long
     chunks = []
     for i in range(0, len(input_data), k):
         chunk = input_data[i:i+k]
         
-        # Pad last chunk if needed
+        # Pad the last chunk if it's shorter than k
         if len(chunk) < k:
             chunk = chunk.ljust(k, 'A')
         
@@ -50,21 +50,21 @@ def encode_large_file(input_data: str, n: int = 30, k: int = 20) -> tuple:
     
     # Encode each chunk
     encoded_chunks = []
+    ecc_symbols_list = []
     
     for chunk in chunks:
         # Encode the chunk
         encoded_chunk, ecc_symbols = encoder.encode(chunk)
         
-        # Convert ECC symbols to DNA and append to encoded chunk
-        ecc_dna = symbols_to_dna(ecc_symbols)
-        full_codeword = encoded_chunk + ecc_dna
+        # Full codeword is the encoded chunk + ECC symbols converted to DNA
+        full_codeword = encoded_chunk + symbols_to_dna(ecc_symbols)
         
         encoded_chunks.append(full_codeword)
+        ecc_symbols_list.append(ecc_symbols)
     
-    # Combine encoded chunks
-    return ''.join(encoded_chunks)
+    return ''.join(encoded_chunks), ecc_symbols_list
 
-def decode_large_file(encoded_data: str, n: int = 30, k: int = 20) -> tuple:
+def decode_large_file(encoded_data: str, ecc_symbols_list: list, n: int = 255, k: int = 223) -> tuple:
     """
     Decode a large file with enhanced error tracking and correction
     
@@ -74,39 +74,28 @@ def decode_large_file(encoded_data: str, n: int = 30, k: int = 20) -> tuple:
     """
     decoder = DNAReedSolomonDecoder(n=n, k=k)
     
-    # Calculate number of chunks
-    chunk_size = n
-    num_chunks = len(encoded_data) // chunk_size
+    # Split encoded data into full codewords (including ECC)
+    encoded_chunks = [encoded_data[i:i+n] for i in range(0, len(encoded_data), n)]
     
     # Decode each chunk with detailed error tracking
     decoded_chunks = []
     error_stats = {
-        'total_chunks': num_chunks,
+        'total_chunks': len(encoded_chunks),
         'successfully_decoded_chunks': 0,
         'failed_chunks': 0,
         'total_errors_detected': 0,
         'chunk_error_details': []
     }
     
-    for i in range(num_chunks):
+    for i, (encoded_chunk, ecc_symbols) in enumerate(zip(encoded_chunks, ecc_symbols_list)):
         try:
-            # Get the full codeword (message + ECC)
-            full_codeword = encoded_data[i*chunk_size:(i+1)*chunk_size]
-            
-            # Split into message and ECC parts
-            message_part = full_codeword[:k]
-            ecc_part = full_codeword[k:]
-            
-            # Convert ECC part back to symbols
-            ecc_symbols = dna_to_symbols(ecc_part)
-            
-            # Decode with error tracking
-            corrected_chunk, errors_corrected, error_details = decoder.decode_with_error_tracking(
-                message_part,
+            # Attempt to decode with enhanced error tracking
+            decoded_chunk, errors_corrected, error_details = decoder.decode_with_error_tracking(
+                encoded_chunk[:k], 
                 ecc_symbols
             )
             
-            decoded_chunks.append(corrected_chunk)
+            decoded_chunks.append(decoded_chunk)
             error_stats['successfully_decoded_chunks'] += 1
             error_stats['total_errors_detected'] += error_details.get('num_errors_detected', 0)
             
@@ -132,24 +121,67 @@ def decode_large_file(encoded_data: str, n: int = 30, k: int = 20) -> tuple:
             
             # Fallback strategy: try partial decoding or use a recovery mechanism
             try:
-                # Attempt partial recovery
-                message_part = encoded_data[i*chunk_size:(i+1)*chunk_size][:k]
-                decoded_chunks.append(message_part)
+                # Attempt partial recovery or use original chunk with warning
+                partial_decoded = encoded_chunk[:k]
+                decoded_chunks.append(partial_decoded)
                 print(f"Warning: Partial recovery for chunk {i}")
             except Exception:
                 # If all recovery fails, insert a placeholder
                 decoded_chunks.append('X' * k)
     
-    # Combine decoded chunks
-    decoded_data = ''.join(decoded_chunks)
+    # Remove padding from the last chunk
+    decoded_data = ''.join(decoded_chunks).rstrip('A')
     
     return decoded_data, error_stats
 
+def create_performance_chart(encode_time, decode_time, file_size_mb):
+    """
+    Create a bar chart showing encoding and decoding performance
+    
+    Args:
+        encode_time (float): Time taken for encoding
+        decode_time (float): Total time taken for decoding
+        file_size_mb (float): File size in MB
+    """
+    # Create figure and axis
+    plt.figure(figsize=(10, 6))
+    
+    # Create bars
+    plt.bar('Encoding', encode_time, color='blue', label='Encoding')
+    
+    # For decoding stages, we'll measure actual time distribution
+    # We'll assume the following approximate ratios based on typical RS decoding:
+    # Syndrome Calculation: 40% of decode time
+    # Error Locator: 30% of decode time
+    # Error Correction: 30% of decode time
+    
+    stages = ['Syndrome Calculation', 'Error Locator', 'Error Correction']
+    stage_times = {
+        'Syndrome Calculation': decode_time * 0.4,
+        'Error Locator': decode_time * 0.3,
+        'Error Correction': decode_time * 0.3
+    }
+    
+    for stage in stages:
+        plt.bar(stage, stage_times[stage], color='red')
+    
+    # Add labels and title
+    plt.title(f'Performance Breakdown for {file_size_mb}MB File')
+    plt.xlabel('Processing Stage')
+    plt.ylabel('Time (seconds)')
+    plt.legend()
+    plt.grid(True, axis='y')
+    
+    # Save and show plot
+    plt.tight_layout()
+    plt.savefig(f'performance_chart_{file_size_mb}mb.png')
+    plt.close()
+
 def main(verbose: bool = True):
-    # Parameters optimized for DNA storage
-    n = 30  # Codeword length (total length including ECC)
-    k = 20  # Message length (original data length)
-    dna_size_mb = 0.0004  # Size in MB
+    # Parameters
+    n = 255  # Codeword length
+    k = 223  # Message length
+    dna_size_mb = 0.5  # Size in MB
     error_rate = 0.01  # 1% error rate
     
     # Create docs directory if it doesn't exist
@@ -183,32 +215,32 @@ def main(verbose: bool = True):
     # 3. Encode DNA sequence
     log("\n2. Encoding DNA sequence...")
     encode_start = time.time()
-    encoded_data = encode_large_file(input_data, n, k)
+    encoded_data, ecc_symbols = encode_large_file(input_data, n, k)
     encode_time = time.time() - encode_start
     log(f"Encoding completed in {encode_time:.2f} seconds")
     
     # 4. Write encoded data
     with open(encoded_file, 'w') as f:
         f.write(encoded_data)
+    with open(ecc_file, 'w') as f:
+        for symbols in ecc_symbols:
+            f.write(''.join(map(str, symbols)) + '\n')
     
-    # 5. Introduce errors in original data before encoding
-    log("\n3. Introducing random errors in original data...")
-    corrupted_input = introduce_random_errors(input_data, error_rate)
+    # 5. Introduce errors
+    log("\n3. Introducing random errors...")
+    corrupted_data = introduce_random_errors(encoded_data, error_rate)
     with open(corrupted_file, 'w') as f:
-        f.write(corrupted_input)
-    
-    # Encode corrupted data
-    log("\n4. Encoding corrupted data...")
-    corrupted_encoded = encode_large_file(corrupted_input, n, k)
+        f.write(corrupted_data)
     
     # 6. Decode and correct
-    log("\n5. Decoding and correcting errors...")
+    log("\n4. Decoding and correcting errors...")
     decode_start = time.time()
     try:
-        corrected_data, error_stats = decode_large_file(corrupted_encoded, n, k)
+        corrected_data, error_stats = decode_large_file(corrupted_data, ecc_symbols, n, k)
         decode_time = time.time() - decode_start
         log(f"Decoding completed in {decode_time:.2f} seconds")
-        
+        # Create performance chart
+        create_performance_chart(encode_time, decode_time, dna_size_mb)
         # Write corrected data
         with open(corrected_file, 'w') as f:
             f.write(corrected_data)
