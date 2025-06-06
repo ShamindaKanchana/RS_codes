@@ -1,0 +1,15 @@
+# Basic Reed-Solomon examples
+add_executable(rs_example01 schifra_reed_solomon_example01.cpp)
+target_link_libraries(rs_example01 PRIVATE schifra)
+
+add_executable(rs_example02 schifra_reed_solomon_example02.cpp)
+target_link_libraries(rs_example02 PRIVATE schifra)
+
+add_executable(rs_example03 schifra_reed_solomon_example03.cpp)
+target_link_libraries(rs_example03 PRIVATE schifra)
+
+add_executable(rs_example04 schifra_reed_solomon_example04.cpp)
+target_link_libraries(rs_example04 PRIVATE schifra)
+
+add_executable(rs_example08 schifra_reed_solomon_example08.cpp)
+target_link_libraries(rs_example08 PRIVATE schifra)
