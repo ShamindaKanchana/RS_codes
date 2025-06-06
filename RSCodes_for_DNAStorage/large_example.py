@@ -20,8 +20,8 @@ def main():
     
     # Generate a large DNA sequence (for example)
     bases = ['A', 'C', 'G', 'T']
-    original_dna = ''.join(random.choices(bases, k=1000))  # 1000 bases
-    
+    original_dna = ''.join(random.choices(bases, k=1000000))  # 500000 bases
+    # decoding process have used 3 errors per chunk
     print(f"Original DNA sequence length: {len(original_dna)}")
     
     # Split into chunks

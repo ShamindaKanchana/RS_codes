@@ -49,14 +49,20 @@ class ReedSolomon:
         return msg_in + remainder
 
     def rs_calc_syndromes(self, msg):
-        """Calculate syndromes polynomial"""
+        """
+        Calculate syndromes polynomial
+        This is the first step in RS decoding that helps detect errors
+        """
         synd = [0] * self.nsym
         for i in range(self.nsym):
             synd[i] = self.gf.poly_eval(msg, self.gf.pow(self.generator, i + self.fcr))
         return [0] + synd  # Pad with 0 for mathematical precision
 
     def rs_correct_errata(self, msg, synd, err_pos):
-        """Correct errors at known positions"""
+        """
+        Forney Algorithm Implementation
+        Corrects errors at known positions by calculating error magnitudes
+        """
         coef_pos = [len(msg) - 1 - p for p in err_pos]
         err_loc = self.rs_find_errata_locator(coef_pos)
         err_eval = self.rs_find_error_evaluator(synd[::-1], err_loc, len(err_loc) - 1)[::-1]
@@ -84,7 +90,10 @@ class ReedSolomon:
         return self.gf.poly_add(msg, E)
 
     def rs_find_error_locator(self, synd, erase_loc=None, erase_count=0):
-        """Find error locator polynomial using Berlekamp-Massey"""
+        """
+        Berlekamp-Massey Algorithm Implementation
+        Finds the error locator polynomial from syndromes
+        """
         if erase_loc:
             err_loc = list(erase_loc)
             old_loc = list(erase_loc)
@@ -119,7 +128,10 @@ class ReedSolomon:
         return err_loc
 
     def rs_find_errors(self, err_loc, nmess):
-        """Find error positions using Chien search"""
+        """
+        Chien Search Algorithm Implementation
+        Finds error positions by finding roots of the error locator polynomial
+        """
         err_pos = []
         for i in range(nmess):
             if self.gf.poly_eval(err_loc, self.gf.pow(self.generator, i)) == 0:
@@ -130,10 +142,12 @@ class ReedSolomon:
 
     def rs_correct_msg(self, msg_in, erase_pos=None):
         """
-        Correct errors in message
-        :param msg_in: Received message (message + ECC)
-        :param erase_pos: Optional list of erasure positions
-        :return: (corrected_message, ecc_remainder)
+        Main Reed-Solomon Decoding Process
+        Combines all algorithms to correct errors:
+        1. Syndrome calculation
+        2. Berlekamp-Massey algorithm for error locator polynomial
+        3. Chien search for error positions
+        4. Forney algorithm for error values
         """
         if erase_pos is None:
             erase_pos = []
