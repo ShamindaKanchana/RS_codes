@@ -127,11 +127,105 @@ std::vector<schifra::galois::field_symbol> encoded_data(code_length);
 // ... (encoding and decoding operations)
 ```
 
-### Building Schifra
-Refer to the `schifra/README` for detailed build instructions and requirements.
+### Building and Running the DNA Storage Example
+
+#### Prerequisites
+- C++17 compatible compiler (g++ 7+ or clang++ 6+)
+- Make
+
+#### Compilation
+```bash
+# Navigate to the DNA storage example directory
+cd RS_codes_for_DNAStorage_schifra/examples/dna_storage/
+
+# Compile with g++
+g++ -std=c++17 -I ../../include test_dna_storage.cpp -o test_dna_storage
+
+# Make the binary executable
+chmod +x test_dna_storage
+```
+
+#### Running the Example
+```bash
+./test_dna_storage
+```
+
+#### Expected Output
+```
+=== Testing Schifra DNA Storage ===
+
+Original DNA: ACGTACGTACG
+Encode returned: 1
+Block after encoding: 00 01 02 03 00 01 02 03 00 01 02 09 02 05 09 
+Encoded DNA (data only): ACGTACGTACG
+ECC (4 symbols): 09 02 05 09 
+Block before decoding: 00 01 02 03 00 01 02 03 00 01 02 09 02 05 09 
+Decoded DNA: ACGTACGTACG
+
+✅ Test 1/2 PASSED: Error-free decoding successful
+
+Corrupted DNA: AAGTAGGTACG (introduced 2 errors)
+Block before decoding: 00 00 02 03 00 02 02 03 00 01 02 09 02 05 09 
+Corrected DNA: ACGTACGTACG
+
+✅ Test 2/2 PASSED: Error correction successful
+```
+
+### Customizing the Example
+
+To use different RS parameters, modify the `dna_storage` template parameters in `test_dna_storage.cpp`:
+
+```cpp
+// Format: schifra::dna_storage<code_length, fec_length, data_length>
+// Where: fec_length = code_length - data_length
+// Example: RS(15,11) with t=2 error correction capability
+using dna_storage_type = schifra::dna_storage<15, 4, 11>;
+
+// For RS(30,20) with t=5 error correction capability:
+// using dna_storage_type = schifra::dna_storage<30, 10, 20>;
+```
+
+### Building Schifra (Full Library)
+Refer to the `schifra/README` for detailed build instructions and requirements for the full library.
 
 ## Academic Use
 This repository is intended for academic and research purposes only. The inclusion of the Schifra library is meant to facilitate research and education in error correction coding. Please ensure proper attribution and compliance with the original library's license terms for any derivative works.
+
+## Additional Resources
+
+### Troubleshooting
+
+1. **Header Not Found Error**
+   ```
+   fatal error: schifra/dna_storage.hpp: No such file or directory
+   ```
+   - Ensure the `-I` flag points to the directory containing the `schifra` folder
+   - Verify the file exists at `include/schifra/dna_storage.hpp`
+
+2. **C++ Version Error**
+   ```
+   error: #error This file requires compiler and library support for the ISO C++ 2017 standard
+   ```
+   - Add `-std=c++17` flag to your compilation command
+   - Update your compiler if needed
+
+## Additional Resources
+
+### Troubleshooting
+
+1. **Header Not Found Error**
+   ```
+   fatal error: schifra/dna_storage.hpp: No such file or directory
+   ```
+   - Ensure the `-I` flag points to the directory containing the `schifra` folder
+   - Verify the file exists at `include/schifra/dna_storage.hpp`
+
+2. **C++ Version Error**
+   ```
+   error: #error This file requires compiler and library support for the ISO C++ 2017 standard
+   ```
+   - Add `-std=c++17` flag to your compilation command
+   - Update your compiler if needed
 
 ## References
 - [Reed-Solomon Error Correction](https://en.wikipedia.org/wiki/Reed%E2%80%93Solomon_error_correction)
