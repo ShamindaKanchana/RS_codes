@@ -1,17 +1,25 @@
 # Reed-Solomon Error Correction Codes Implementation
 
 ## Overview
-This project provides a comprehensive implementation of Reed-Solomon (RS) error correction codes, a powerful error-correcting code used in various applications such as data storage, telecommunications, and digital communication.
+This project provides a comprehensive implementation of Reed-Solomon (RS) error correction codes, a powerful error-correcting code used in various applications such as data storage, telecommunications, and digital communication. The repository includes both a custom Python implementation and the Schifra Reed-Solomon error correction library in C++.
+
+**Note:** The Schifra library is included for academic and research purposes only, with no commercial intent.
 
 ## Project Structure
 ```
-RS_codes_main/
+RS_codes/
 │
-├── main.py               # Main demonstration script
-├── init_tables.py        # Galois Field tables initialization
-├── encode.py             # Reed-Solomon encoding functions
-├── decode.py             # Reed-Solomon decoding functions
-└── gf_operations.py      # Galois Field mathematical operations
+├── RS_codes_main/               # Custom Python implementation
+│   ├── main.py                  # Main demonstration script
+│   ├── init_tables.py           # Galois Field tables initialization
+│   ├── encode.py                # Reed-Solomon encoding functions
+│   ├── decode.py                # Reed-Solomon decoding functions
+│   └── gf_operations.py         # Galois Field mathematical operations
+│
+└── schifra/                   # Schifra C++ Reed-Solomon library
+    ├── include/                 # Header files
+    ├── src/                    # Source files
+    └── examples/               # Example usage
 ```
 
 ## Key Components
@@ -89,7 +97,44 @@ corrected_msg, _ = rs_correct_msg(encoded_msg, n-k, erase_pos=[0, 1])
 - Maximum message length: 255 symbols
 - Error correction limited by redundant symbol count
 
+## Schifra C++ Reed-Solomon Library
+
+### Overview
+Schifra is a robust, highly optimized C++ library for Reed-Solomon error correction coding. It provides a comprehensive set of features for implementing RS codes in high-performance applications.
+
+### Key Features
+- Support for variable code word lengths and error correction capabilities
+- High performance through template metaprogramming and optimization
+- Support for both encoding and decoding operations
+- Includes utilities for interleaving and block processing
+- Comprehensive test suite and examples
+
+### Example Usage
+```cpp
+#include <schifra/schifra_reed_solomon.hpp>
+
+// Initialize the Reed-Solomon codec
+const std::size_t code_length = 255;
+const std::size_t fec_length = 32;
+const std::size_t data_length = code_length - fec_length;
+
+schifra::reed_solomon::codec<code_length, fec_length> rs_encoder;
+
+// Encode data
+std::string message = "Hello, World!";
+std::vector<schifra::galois::field_symbol> encoded_data(code_length);
+
+// ... (encoding and decoding operations)
+```
+
+### Building Schifra
+Refer to the `schifra/README` for detailed build instructions and requirements.
+
+## Academic Use
+This repository is intended for academic and research purposes only. The inclusion of the Schifra library is meant to facilitate research and education in error correction coding. Please ensure proper attribution and compliance with the original library's license terms for any derivative works.
+
 ## References
 - [Reed-Solomon Error Correction](https://en.wikipedia.org/wiki/Reed%E2%80%93Solomon_error_correction)
 - [Galois Field Arithmetic](https://www.cs.utsa.edu/~wagner/laws/FFM.html)
+- [Schifra Library](https://github.com/ArashPartow/schifra) - Original Schifra RS library
 
