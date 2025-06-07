@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -Dschifra_dna_storage_EXPORTS
 
-CXX_INCLUDES = -I"/home/shaminda/Documents/My Projects/schifra/include"
+CXX_INCLUDES = -I"/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/include"
 
 CXX_FLAGS = -std=c++17 -fPIC
 

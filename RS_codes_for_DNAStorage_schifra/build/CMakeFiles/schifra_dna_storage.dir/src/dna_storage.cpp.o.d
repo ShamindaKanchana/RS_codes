@@ -1,7 +1,7 @@
 CMakeFiles/schifra_dna_storage.dir/src/dna_storage.cpp.o: \
- /home/shaminda/Documents/My\ Projects/schifra/src/dna_storage.cpp \
+ /home/shaminda/Documents/My\ Projects/RS_codes/RS_codes_for_DNAStorage_schifra/src/dna_storage.cpp \
  /usr/include/stdc-predef.h \
- /home/shaminda/Documents/My\ Projects/schifra/include/schifra/dna_storage.hpp \
+ /home/shaminda/Documents/My\ Projects/RS_codes/RS_codes_for_DNAStorage_schifra/include/schifra/dna_storage.hpp \
  /usr/include/c++/13/cstddef \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -204,12 +204,12 @@ CMakeFiles/schifra_dna_storage.dir/src/dna_storage.cpp.o: \
  /usr/include/c++/13/cstdint /usr/include/c++/13/limits \
  /usr/include/c++/13/bits/parse_numbers.h /usr/include/c++/13/algorithm \
  /usr/include/c++/13/pstl/glue_algorithm_defs.h \
- /home/shaminda/Documents/My\ Projects/schifra/include/schifra/core/galois_field/field.hpp \
- /home/shaminda/Documents/My\ Projects/schifra/include/schifra/core/galois_field/polynomial.hpp \
+ /home/shaminda/Documents/My\ Projects/RS_codes/RS_codes_for_DNAStorage_schifra/include/schifra/core/galois_field/field.hpp \
+ /home/shaminda/Documents/My\ Projects/RS_codes/RS_codes_for_DNAStorage_schifra/include/schifra/core/galois_field/polynomial.hpp \
  /usr/include/c++/13/cassert /usr/include/assert.h \
- /home/shaminda/Documents/My\ Projects/schifra/include/schifra/core/galois_field/element.hpp \
- /home/shaminda/Documents/My\ Projects/schifra/include/schifra/reed_solomon/schifra_sequential_root_generator_polynomial_creator.hpp \
- /home/shaminda/Documents/My\ Projects/schifra/include/schifra/reed_solomon/schifra_reed_solomon_encoder.hpp \
- /home/shaminda/Documents/My\ Projects/schifra/include/schifra/reed_solomon/schifra_reed_solomon_block.hpp \
- /home/shaminda/Documents/My\ Projects/schifra/include/schifra/utils/schifra_ecc_traits.hpp \
- /home/shaminda/Documents/My\ Projects/schifra/include/schifra/reed_solomon/schifra_reed_solomon_decoder.hpp
+ /home/shaminda/Documents/My\ Projects/RS_codes/RS_codes_for_DNAStorage_schifra/include/schifra/core/galois_field/element.hpp \
+ /home/shaminda/Documents/My\ Projects/RS_codes/RS_codes_for_DNAStorage_schifra/include/schifra/reed_solomon/schifra_sequential_root_generator_polynomial_creator.hpp \
+ /home/shaminda/Documents/My\ Projects/RS_codes/RS_codes_for_DNAStorage_schifra/include/schifra/reed_solomon/schifra_reed_solomon_encoder.hpp \
+ /home/shaminda/Documents/My\ Projects/RS_codes/RS_codes_for_DNAStorage_schifra/include/schifra/reed_solomon/schifra_reed_solomon_block.hpp \
+ /home/shaminda/Documents/My\ Projects/RS_codes/RS_codes_for_DNAStorage_schifra/include/schifra/utils/schifra_ecc_traits.hpp \
+ /home/shaminda/Documents/My\ Projects/RS_codes/RS_codes_for_DNAStorage_schifra/include/schifra/reed_solomon/schifra_reed_solomon_decoder.hpp

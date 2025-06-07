@@ -19,19 +19,19 @@ void run_test() {
         
         // 2. Test with a simple DNA sequence
         std::string original = "ACGTACGTACG";  // 11 bases (matches k=11)
-        std::cout << "Original DNA: " << original << "\n";
+        std::cout << "Original DNA sequence: " << original << "\n";
         
         // 3. Encode the DNA sequence
         auto [encoded_dna, ecc] = dna_storage.encode(original);
-        std::cout << "Encoded DNA (data only): " << encoded_dna << "\n";
+        std::cout << "Encoded DNA (with ECC): " << encoded_dna << "\n";
         
-        // 4. Print ECC symbols
-        std::cout << "ECC (" << ecc.size() << " symbols): ";
-        for (auto b : ecc) {
-            std::cout << std::hex << std::setw(2) << std::setfill('0') 
-                     << (int)b << " ";
+        // 4. Print ECC symbols (for debugging)
+        std::cout << "ECC symbols: [";
+        for (size_t i = 0; i < ecc.size(); ++i) {
+            std::cout << (int)ecc[i];
+            if (i < ecc.size() - 1) std::cout << ", ";
         }
-        std::cout << std::dec << "\n";
+        std::cout << "]\n";
         
         // 5. Test error-free decoding
         std::string decoded = dna_storage.decode(encoded_dna, ecc);

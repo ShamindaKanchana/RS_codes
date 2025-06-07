@@ -1,4 +1,4 @@
-# Install script for directory: /home/shaminda/Documents/My Projects/schifra/examples
+# Install script for directory: /home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/examples
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,10 +44,10 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/shaminda/Documents/My Projects/schifra/build/examples/basic/cmake_install.cmake")
-  include("/home/shaminda/Documents/My Projects/schifra/build/examples/file_operations/cmake_install.cmake")
-  include("/home/shaminda/Documents/My Projects/schifra/build/examples/advanced/cmake_install.cmake")
-  include("/home/shaminda/Documents/My Projects/schifra/build/examples/dna_storage/cmake_install.cmake")
+  include("/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/examples/basic/cmake_install.cmake")
+  include("/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/examples/file_operations/cmake_install.cmake")
+  include("/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/examples/advanced/cmake_install.cmake")
+  include("/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/examples/dna_storage/cmake_install.cmake")
 
 endif()
 

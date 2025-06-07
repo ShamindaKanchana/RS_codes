@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/shaminda/Documents/My Projects/schifra"
+CMAKE_SOURCE_DIR = "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/shaminda/Documents/My Projects/schifra/build"
+CMAKE_BINARY_DIR = "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -142,9 +142,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" "/home/shaminda/Documents/My Projects/schifra/build//CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build//CMakeFiles/progress.marks"
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target

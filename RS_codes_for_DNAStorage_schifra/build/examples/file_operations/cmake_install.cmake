@@ -1,4 +1,4 @@
-# Install script for directory: /home/shaminda/Documents/My Projects/schifra/examples/file_operations
+# Install script for directory: /home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/examples/file_operations
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

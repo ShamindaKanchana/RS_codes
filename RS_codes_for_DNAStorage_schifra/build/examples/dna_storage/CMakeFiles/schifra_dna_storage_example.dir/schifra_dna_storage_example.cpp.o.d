@@ -1,5 +1,5 @@
 examples/dna_storage/CMakeFiles/schifra_dna_storage_example.dir/schifra_dna_storage_example.cpp.o: \
- /home/shaminda/Documents/My\ Projects/schifra/examples/dna_storage/schifra_dna_storage_example.cpp \
+ /home/shaminda/Documents/My\ Projects/RS_codes/RS_codes_for_DNAStorage_schifra/examples/dna_storage/schifra_dna_storage_example.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/13/iostream \
  /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
@@ -169,7 +169,7 @@ examples/dna_storage/CMakeFiles/schifra_dna_storage_example.dir/schifra_dna_stor
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
- /home/shaminda/Documents/My\ Projects/schifra/examples/dna_storage/../../include/schifra/dna_storage.hpp \
+ /home/shaminda/Documents/My\ Projects/RS_codes/RS_codes_for_DNAStorage_schifra/examples/dna_storage/../../include/schifra/dna_storage.hpp \
  /usr/include/c++/13/array /usr/include/c++/13/compare \
  /usr/include/c++/13/memory /usr/include/c++/13/bits/stl_tempbuf.h \
  /usr/include/c++/13/bits/stl_raw_storage_iter.h \
@@ -201,12 +201,12 @@ examples/dna_storage/CMakeFiles/schifra_dna_storage_example.dir/schifra_dna_stor
  /usr/include/c++/13/limits /usr/include/c++/13/bits/parse_numbers.h \
  /usr/include/c++/13/algorithm \
  /usr/include/c++/13/pstl/glue_algorithm_defs.h \
- /home/shaminda/Documents/My\ Projects/schifra/examples/dna_storage/../../include/schifra/core/galois_field/field.hpp \
- /home/shaminda/Documents/My\ Projects/schifra/examples/dna_storage/../../include/schifra/core/galois_field/polynomial.hpp \
+ /home/shaminda/Documents/My\ Projects/RS_codes/RS_codes_for_DNAStorage_schifra/examples/dna_storage/../../include/schifra/core/galois_field/field.hpp \
+ /home/shaminda/Documents/My\ Projects/RS_codes/RS_codes_for_DNAStorage_schifra/examples/dna_storage/../../include/schifra/core/galois_field/polynomial.hpp \
  /usr/include/c++/13/cassert /usr/include/assert.h \
- /home/shaminda/Documents/My\ Projects/schifra/examples/dna_storage/../../include/schifra/core/galois_field/element.hpp \
- /home/shaminda/Documents/My\ Projects/schifra/examples/dna_storage/../../include/schifra/reed_solomon/schifra_sequential_root_generator_polynomial_creator.hpp \
- /home/shaminda/Documents/My\ Projects/schifra/examples/dna_storage/../../include/schifra/reed_solomon/schifra_reed_solomon_encoder.hpp \
- /home/shaminda/Documents/My\ Projects/schifra/examples/dna_storage/../../include/schifra/reed_solomon/schifra_reed_solomon_block.hpp \
- /home/shaminda/Documents/My\ Projects/schifra/examples/dna_storage/../../include/schifra/utils/schifra_ecc_traits.hpp \
- /home/shaminda/Documents/My\ Projects/schifra/examples/dna_storage/../../include/schifra/reed_solomon/schifra_reed_solomon_decoder.hpp
+ /home/shaminda/Documents/My\ Projects/RS_codes/RS_codes_for_DNAStorage_schifra/examples/dna_storage/../../include/schifra/core/galois_field/element.hpp \
+ /home/shaminda/Documents/My\ Projects/RS_codes/RS_codes_for_DNAStorage_schifra/examples/dna_storage/../../include/schifra/reed_solomon/schifra_sequential_root_generator_polynomial_creator.hpp \
+ /home/shaminda/Documents/My\ Projects/RS_codes/RS_codes_for_DNAStorage_schifra/examples/dna_storage/../../include/schifra/reed_solomon/schifra_reed_solomon_encoder.hpp \
+ /home/shaminda/Documents/My\ Projects/RS_codes/RS_codes_for_DNAStorage_schifra/examples/dna_storage/../../include/schifra/reed_solomon/schifra_reed_solomon_block.hpp \
+ /home/shaminda/Documents/My\ Projects/RS_codes/RS_codes_for_DNAStorage_schifra/examples/dna_storage/../../include/schifra/utils/schifra_ecc_traits.hpp \
+ /home/shaminda/Documents/My\ Projects/RS_codes/RS_codes_for_DNAStorage_schifra/examples/dna_storage/../../include/schifra/reed_solomon/schifra_reed_solomon_decoder.hpp

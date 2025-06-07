@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/shaminda/Documents/My Projects/schifra"
+CMAKE_SOURCE_DIR = "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/shaminda/Documents/My Projects/schifra/build"
+CMAKE_BINARY_DIR = "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build"
 
 # Include any dependencies generated for this target.
 include examples/dna_storage/CMakeFiles/test_dna_storage.dir/depend.make
@@ -70,18 +70,18 @@ include examples/dna_storage/CMakeFiles/test_dna_storage.dir/progress.make
 include examples/dna_storage/CMakeFiles/test_dna_storage.dir/flags.make
 
 examples/dna_storage/CMakeFiles/test_dna_storage.dir/test_dna_storage.cpp.o: examples/dna_storage/CMakeFiles/test_dna_storage.dir/flags.make
-examples/dna_storage/CMakeFiles/test_dna_storage.dir/test_dna_storage.cpp.o: /home/shaminda/Documents/My\ Projects/schifra/examples/dna_storage/test_dna_storage.cpp
+examples/dna_storage/CMakeFiles/test_dna_storage.dir/test_dna_storage.cpp.o: /home/shaminda/Documents/My\ Projects/RS_codes/RS_codes_for_DNAStorage_schifra/examples/dna_storage/test_dna_storage.cpp
 examples/dna_storage/CMakeFiles/test_dna_storage.dir/test_dna_storage.cpp.o: examples/dna_storage/CMakeFiles/test_dna_storage.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object examples/dna_storage/CMakeFiles/test_dna_storage.dir/test_dna_storage.cpp.o"
-	cd "/home/shaminda/Documents/My Projects/schifra/build/examples/dna_storage" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT examples/dna_storage/CMakeFiles/test_dna_storage.dir/test_dna_storage.cpp.o -MF CMakeFiles/test_dna_storage.dir/test_dna_storage.cpp.o.d -o CMakeFiles/test_dna_storage.dir/test_dna_storage.cpp.o -c "/home/shaminda/Documents/My Projects/schifra/examples/dna_storage/test_dna_storage.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object examples/dna_storage/CMakeFiles/test_dna_storage.dir/test_dna_storage.cpp.o"
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/examples/dna_storage" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT examples/dna_storage/CMakeFiles/test_dna_storage.dir/test_dna_storage.cpp.o -MF CMakeFiles/test_dna_storage.dir/test_dna_storage.cpp.o.d -o CMakeFiles/test_dna_storage.dir/test_dna_storage.cpp.o -c "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/examples/dna_storage/test_dna_storage.cpp"
 
 examples/dna_storage/CMakeFiles/test_dna_storage.dir/test_dna_storage.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/test_dna_storage.dir/test_dna_storage.cpp.i"
-	cd "/home/shaminda/Documents/My Projects/schifra/build/examples/dna_storage" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/shaminda/Documents/My Projects/schifra/examples/dna_storage/test_dna_storage.cpp" > CMakeFiles/test_dna_storage.dir/test_dna_storage.cpp.i
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/examples/dna_storage" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/examples/dna_storage/test_dna_storage.cpp" > CMakeFiles/test_dna_storage.dir/test_dna_storage.cpp.i
 
 examples/dna_storage/CMakeFiles/test_dna_storage.dir/test_dna_storage.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/test_dna_storage.dir/test_dna_storage.cpp.s"
-	cd "/home/shaminda/Documents/My Projects/schifra/build/examples/dna_storage" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/shaminda/Documents/My Projects/schifra/examples/dna_storage/test_dna_storage.cpp" -o CMakeFiles/test_dna_storage.dir/test_dna_storage.cpp.s
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/examples/dna_storage" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/examples/dna_storage/test_dna_storage.cpp" -o CMakeFiles/test_dna_storage.dir/test_dna_storage.cpp.s
 
 # Object files for target test_dna_storage
 test_dna_storage_OBJECTS = \
@@ -94,18 +94,18 @@ examples/dna_storage/test_dna_storage: examples/dna_storage/CMakeFiles/test_dna_
 examples/dna_storage/test_dna_storage: examples/dna_storage/CMakeFiles/test_dna_storage.dir/build.make
 examples/dna_storage/test_dna_storage: libschifra_dna_storage.so
 examples/dna_storage/test_dna_storage: examples/dna_storage/CMakeFiles/test_dna_storage.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable test_dna_storage"
-	cd "/home/shaminda/Documents/My Projects/schifra/build/examples/dna_storage" && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_dna_storage.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable test_dna_storage"
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/examples/dna_storage" && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_dna_storage.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 examples/dna_storage/CMakeFiles/test_dna_storage.dir/build: examples/dna_storage/test_dna_storage
 .PHONY : examples/dna_storage/CMakeFiles/test_dna_storage.dir/build
 
 examples/dna_storage/CMakeFiles/test_dna_storage.dir/clean:
-	cd "/home/shaminda/Documents/My Projects/schifra/build/examples/dna_storage" && $(CMAKE_COMMAND) -P CMakeFiles/test_dna_storage.dir/cmake_clean.cmake
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/examples/dna_storage" && $(CMAKE_COMMAND) -P CMakeFiles/test_dna_storage.dir/cmake_clean.cmake
 .PHONY : examples/dna_storage/CMakeFiles/test_dna_storage.dir/clean
 
 examples/dna_storage/CMakeFiles/test_dna_storage.dir/depend:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/shaminda/Documents/My Projects/schifra" "/home/shaminda/Documents/My Projects/schifra/examples/dna_storage" "/home/shaminda/Documents/My Projects/schifra/build" "/home/shaminda/Documents/My Projects/schifra/build/examples/dna_storage" "/home/shaminda/Documents/My Projects/schifra/build/examples/dna_storage/CMakeFiles/test_dna_storage.dir/DependInfo.cmake" "--color=$(COLOR)"
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra" "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/examples/dna_storage" "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/examples/dna_storage" "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/examples/dna_storage/CMakeFiles/test_dna_storage.dir/DependInfo.cmake" "--color=$(COLOR)"
 .PHONY : examples/dna_storage/CMakeFiles/test_dna_storage.dir/depend
 

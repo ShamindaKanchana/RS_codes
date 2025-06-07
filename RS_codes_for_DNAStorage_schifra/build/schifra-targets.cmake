@@ -55,21 +55,21 @@ add_library(schifra::schifra_dna_storage SHARED IMPORTED)
 
 set_target_properties(schifra::schifra_dna_storage PROPERTIES
   INTERFACE_COMPILE_FEATURES "cxx_std_17"
-  INTERFACE_INCLUDE_DIRECTORIES "/home/shaminda/Documents/My Projects/schifra/include"
+  INTERFACE_INCLUDE_DIRECTORIES "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/include"
 )
 
 # Create imported target schifra::schifra
 add_library(schifra::schifra INTERFACE IMPORTED)
 
 set_target_properties(schifra::schifra PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "/home/shaminda/Documents/My Projects/schifra/include"
+  INTERFACE_INCLUDE_DIRECTORIES "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/include"
   INTERFACE_LINK_LIBRARIES "schifra::schifra_dna_storage"
 )
 
 # Import target "schifra::schifra_dna_storage" for configuration ""
 set_property(TARGET schifra::schifra_dna_storage APPEND PROPERTY IMPORTED_CONFIGURATIONS NOCONFIG)
 set_target_properties(schifra::schifra_dna_storage PROPERTIES
-  IMPORTED_LOCATION_NOCONFIG "/home/shaminda/Documents/My Projects/schifra/build/libschifra_dna_storage.so"
+  IMPORTED_LOCATION_NOCONFIG "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/libschifra_dna_storage.so"
   IMPORTED_SONAME_NOCONFIG "libschifra_dna_storage.so"
   )
 

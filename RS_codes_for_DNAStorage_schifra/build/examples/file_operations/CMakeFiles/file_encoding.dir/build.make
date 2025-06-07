@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/shaminda/Documents/My Projects/schifra"
+CMAKE_SOURCE_DIR = "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/shaminda/Documents/My Projects/schifra/build"
+CMAKE_BINARY_DIR = "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build"
 
 # Include any dependencies generated for this target.
 include examples/file_operations/CMakeFiles/file_encoding.dir/depend.make
@@ -70,18 +70,18 @@ include examples/file_operations/CMakeFiles/file_encoding.dir/progress.make
 include examples/file_operations/CMakeFiles/file_encoding.dir/flags.make
 
 examples/file_operations/CMakeFiles/file_encoding.dir/schifra_reed_solomon_file_encoding_example.cpp.o: examples/file_operations/CMakeFiles/file_encoding.dir/flags.make
-examples/file_operations/CMakeFiles/file_encoding.dir/schifra_reed_solomon_file_encoding_example.cpp.o: /home/shaminda/Documents/My\ Projects/schifra/examples/file_operations/schifra_reed_solomon_file_encoding_example.cpp
+examples/file_operations/CMakeFiles/file_encoding.dir/schifra_reed_solomon_file_encoding_example.cpp.o: /home/shaminda/Documents/My\ Projects/RS_codes/RS_codes_for_DNAStorage_schifra/examples/file_operations/schifra_reed_solomon_file_encoding_example.cpp
 examples/file_operations/CMakeFiles/file_encoding.dir/schifra_reed_solomon_file_encoding_example.cpp.o: examples/file_operations/CMakeFiles/file_encoding.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object examples/file_operations/CMakeFiles/file_encoding.dir/schifra_reed_solomon_file_encoding_example.cpp.o"
-	cd "/home/shaminda/Documents/My Projects/schifra/build/examples/file_operations" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT examples/file_operations/CMakeFiles/file_encoding.dir/schifra_reed_solomon_file_encoding_example.cpp.o -MF CMakeFiles/file_encoding.dir/schifra_reed_solomon_file_encoding_example.cpp.o.d -o CMakeFiles/file_encoding.dir/schifra_reed_solomon_file_encoding_example.cpp.o -c "/home/shaminda/Documents/My Projects/schifra/examples/file_operations/schifra_reed_solomon_file_encoding_example.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object examples/file_operations/CMakeFiles/file_encoding.dir/schifra_reed_solomon_file_encoding_example.cpp.o"
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/examples/file_operations" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT examples/file_operations/CMakeFiles/file_encoding.dir/schifra_reed_solomon_file_encoding_example.cpp.o -MF CMakeFiles/file_encoding.dir/schifra_reed_solomon_file_encoding_example.cpp.o.d -o CMakeFiles/file_encoding.dir/schifra_reed_solomon_file_encoding_example.cpp.o -c "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/examples/file_operations/schifra_reed_solomon_file_encoding_example.cpp"
 
 examples/file_operations/CMakeFiles/file_encoding.dir/schifra_reed_solomon_file_encoding_example.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/file_encoding.dir/schifra_reed_solomon_file_encoding_example.cpp.i"
-	cd "/home/shaminda/Documents/My Projects/schifra/build/examples/file_operations" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/shaminda/Documents/My Projects/schifra/examples/file_operations/schifra_reed_solomon_file_encoding_example.cpp" > CMakeFiles/file_encoding.dir/schifra_reed_solomon_file_encoding_example.cpp.i
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/examples/file_operations" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/examples/file_operations/schifra_reed_solomon_file_encoding_example.cpp" > CMakeFiles/file_encoding.dir/schifra_reed_solomon_file_encoding_example.cpp.i
 
 examples/file_operations/CMakeFiles/file_encoding.dir/schifra_reed_solomon_file_encoding_example.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/file_encoding.dir/schifra_reed_solomon_file_encoding_example.cpp.s"
-	cd "/home/shaminda/Documents/My Projects/schifra/build/examples/file_operations" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/shaminda/Documents/My Projects/schifra/examples/file_operations/schifra_reed_solomon_file_encoding_example.cpp" -o CMakeFiles/file_encoding.dir/schifra_reed_solomon_file_encoding_example.cpp.s
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/examples/file_operations" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/examples/file_operations/schifra_reed_solomon_file_encoding_example.cpp" -o CMakeFiles/file_encoding.dir/schifra_reed_solomon_file_encoding_example.cpp.s
 
 # Object files for target file_encoding
 file_encoding_OBJECTS = \
@@ -94,18 +94,18 @@ examples/file_operations/file_encoding: examples/file_operations/CMakeFiles/file
 examples/file_operations/file_encoding: examples/file_operations/CMakeFiles/file_encoding.dir/build.make
 examples/file_operations/file_encoding: libschifra_dna_storage.so
 examples/file_operations/file_encoding: examples/file_operations/CMakeFiles/file_encoding.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable file_encoding"
-	cd "/home/shaminda/Documents/My Projects/schifra/build/examples/file_operations" && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/file_encoding.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable file_encoding"
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/examples/file_operations" && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/file_encoding.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 examples/file_operations/CMakeFiles/file_encoding.dir/build: examples/file_operations/file_encoding
 .PHONY : examples/file_operations/CMakeFiles/file_encoding.dir/build
 
 examples/file_operations/CMakeFiles/file_encoding.dir/clean:
-	cd "/home/shaminda/Documents/My Projects/schifra/build/examples/file_operations" && $(CMAKE_COMMAND) -P CMakeFiles/file_encoding.dir/cmake_clean.cmake
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/examples/file_operations" && $(CMAKE_COMMAND) -P CMakeFiles/file_encoding.dir/cmake_clean.cmake
 .PHONY : examples/file_operations/CMakeFiles/file_encoding.dir/clean
 
 examples/file_operations/CMakeFiles/file_encoding.dir/depend:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/shaminda/Documents/My Projects/schifra" "/home/shaminda/Documents/My Projects/schifra/examples/file_operations" "/home/shaminda/Documents/My Projects/schifra/build" "/home/shaminda/Documents/My Projects/schifra/build/examples/file_operations" "/home/shaminda/Documents/My Projects/schifra/build/examples/file_operations/CMakeFiles/file_encoding.dir/DependInfo.cmake" "--color=$(COLOR)"
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra" "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/examples/file_operations" "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/examples/file_operations" "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/examples/file_operations/CMakeFiles/file_encoding.dir/DependInfo.cmake" "--color=$(COLOR)"
 .PHONY : examples/file_operations/CMakeFiles/file_encoding.dir/depend
 

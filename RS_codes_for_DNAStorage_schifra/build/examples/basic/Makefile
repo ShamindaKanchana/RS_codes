@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/shaminda/Documents/My Projects/schifra"
+CMAKE_SOURCE_DIR = "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/shaminda/Documents/My Projects/schifra/build"
+CMAKE_BINARY_DIR = "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -142,14 +142,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" "/home/shaminda/Documents/My Projects/schifra/build/examples/basic//CMakeFiles/progress.marks"
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/basic/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" 0
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/examples/basic//CMakeFiles/progress.marks"
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/basic/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/basic/clean
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/basic/clean
 .PHONY : clean
 
 # The main clean target
@@ -158,22 +158,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/basic/preinstall
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/basic/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/basic/preinstall
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/basic/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 examples/basic/CMakeFiles/rs_example01.dir/rule:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/basic/CMakeFiles/rs_example01.dir/rule
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/basic/CMakeFiles/rs_example01.dir/rule
 .PHONY : examples/basic/CMakeFiles/rs_example01.dir/rule
 
 # Convenience name for target.
@@ -182,12 +182,12 @@ rs_example01: examples/basic/CMakeFiles/rs_example01.dir/rule
 
 # fast build rule for target.
 rs_example01/fast:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example01.dir/build.make examples/basic/CMakeFiles/rs_example01.dir/build
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example01.dir/build.make examples/basic/CMakeFiles/rs_example01.dir/build
 .PHONY : rs_example01/fast
 
 # Convenience name for target.
 examples/basic/CMakeFiles/rs_example02.dir/rule:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/basic/CMakeFiles/rs_example02.dir/rule
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/basic/CMakeFiles/rs_example02.dir/rule
 .PHONY : examples/basic/CMakeFiles/rs_example02.dir/rule
 
 # Convenience name for target.
@@ -196,12 +196,12 @@ rs_example02: examples/basic/CMakeFiles/rs_example02.dir/rule
 
 # fast build rule for target.
 rs_example02/fast:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example02.dir/build.make examples/basic/CMakeFiles/rs_example02.dir/build
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example02.dir/build.make examples/basic/CMakeFiles/rs_example02.dir/build
 .PHONY : rs_example02/fast
 
 # Convenience name for target.
 examples/basic/CMakeFiles/rs_example03.dir/rule:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/basic/CMakeFiles/rs_example03.dir/rule
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/basic/CMakeFiles/rs_example03.dir/rule
 .PHONY : examples/basic/CMakeFiles/rs_example03.dir/rule
 
 # Convenience name for target.
@@ -210,12 +210,12 @@ rs_example03: examples/basic/CMakeFiles/rs_example03.dir/rule
 
 # fast build rule for target.
 rs_example03/fast:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example03.dir/build.make examples/basic/CMakeFiles/rs_example03.dir/build
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example03.dir/build.make examples/basic/CMakeFiles/rs_example03.dir/build
 .PHONY : rs_example03/fast
 
 # Convenience name for target.
 examples/basic/CMakeFiles/rs_example04.dir/rule:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/basic/CMakeFiles/rs_example04.dir/rule
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/basic/CMakeFiles/rs_example04.dir/rule
 .PHONY : examples/basic/CMakeFiles/rs_example04.dir/rule
 
 # Convenience name for target.
@@ -224,12 +224,12 @@ rs_example04: examples/basic/CMakeFiles/rs_example04.dir/rule
 
 # fast build rule for target.
 rs_example04/fast:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example04.dir/build.make examples/basic/CMakeFiles/rs_example04.dir/build
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example04.dir/build.make examples/basic/CMakeFiles/rs_example04.dir/build
 .PHONY : rs_example04/fast
 
 # Convenience name for target.
 examples/basic/CMakeFiles/rs_example08.dir/rule:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/basic/CMakeFiles/rs_example08.dir/rule
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/basic/CMakeFiles/rs_example08.dir/rule
 .PHONY : examples/basic/CMakeFiles/rs_example08.dir/rule
 
 # Convenience name for target.
@@ -238,7 +238,7 @@ rs_example08: examples/basic/CMakeFiles/rs_example08.dir/rule
 
 # fast build rule for target.
 rs_example08/fast:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example08.dir/build.make examples/basic/CMakeFiles/rs_example08.dir/build
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example08.dir/build.make examples/basic/CMakeFiles/rs_example08.dir/build
 .PHONY : rs_example08/fast
 
 schifra_reed_solomon_example01.o: schifra_reed_solomon_example01.cpp.o
@@ -246,7 +246,7 @@ schifra_reed_solomon_example01.o: schifra_reed_solomon_example01.cpp.o
 
 # target to build an object file
 schifra_reed_solomon_example01.cpp.o:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example01.dir/build.make examples/basic/CMakeFiles/rs_example01.dir/schifra_reed_solomon_example01.cpp.o
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example01.dir/build.make examples/basic/CMakeFiles/rs_example01.dir/schifra_reed_solomon_example01.cpp.o
 .PHONY : schifra_reed_solomon_example01.cpp.o
 
 schifra_reed_solomon_example01.i: schifra_reed_solomon_example01.cpp.i
@@ -254,7 +254,7 @@ schifra_reed_solomon_example01.i: schifra_reed_solomon_example01.cpp.i
 
 # target to preprocess a source file
 schifra_reed_solomon_example01.cpp.i:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example01.dir/build.make examples/basic/CMakeFiles/rs_example01.dir/schifra_reed_solomon_example01.cpp.i
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example01.dir/build.make examples/basic/CMakeFiles/rs_example01.dir/schifra_reed_solomon_example01.cpp.i
 .PHONY : schifra_reed_solomon_example01.cpp.i
 
 schifra_reed_solomon_example01.s: schifra_reed_solomon_example01.cpp.s
@@ -262,7 +262,7 @@ schifra_reed_solomon_example01.s: schifra_reed_solomon_example01.cpp.s
 
 # target to generate assembly for a file
 schifra_reed_solomon_example01.cpp.s:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example01.dir/build.make examples/basic/CMakeFiles/rs_example01.dir/schifra_reed_solomon_example01.cpp.s
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example01.dir/build.make examples/basic/CMakeFiles/rs_example01.dir/schifra_reed_solomon_example01.cpp.s
 .PHONY : schifra_reed_solomon_example01.cpp.s
 
 schifra_reed_solomon_example02.o: schifra_reed_solomon_example02.cpp.o
@@ -270,7 +270,7 @@ schifra_reed_solomon_example02.o: schifra_reed_solomon_example02.cpp.o
 
 # target to build an object file
 schifra_reed_solomon_example02.cpp.o:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example02.dir/build.make examples/basic/CMakeFiles/rs_example02.dir/schifra_reed_solomon_example02.cpp.o
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example02.dir/build.make examples/basic/CMakeFiles/rs_example02.dir/schifra_reed_solomon_example02.cpp.o
 .PHONY : schifra_reed_solomon_example02.cpp.o
 
 schifra_reed_solomon_example02.i: schifra_reed_solomon_example02.cpp.i
@@ -278,7 +278,7 @@ schifra_reed_solomon_example02.i: schifra_reed_solomon_example02.cpp.i
 
 # target to preprocess a source file
 schifra_reed_solomon_example02.cpp.i:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example02.dir/build.make examples/basic/CMakeFiles/rs_example02.dir/schifra_reed_solomon_example02.cpp.i
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example02.dir/build.make examples/basic/CMakeFiles/rs_example02.dir/schifra_reed_solomon_example02.cpp.i
 .PHONY : schifra_reed_solomon_example02.cpp.i
 
 schifra_reed_solomon_example02.s: schifra_reed_solomon_example02.cpp.s
@@ -286,7 +286,7 @@ schifra_reed_solomon_example02.s: schifra_reed_solomon_example02.cpp.s
 
 # target to generate assembly for a file
 schifra_reed_solomon_example02.cpp.s:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example02.dir/build.make examples/basic/CMakeFiles/rs_example02.dir/schifra_reed_solomon_example02.cpp.s
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example02.dir/build.make examples/basic/CMakeFiles/rs_example02.dir/schifra_reed_solomon_example02.cpp.s
 .PHONY : schifra_reed_solomon_example02.cpp.s
 
 schifra_reed_solomon_example03.o: schifra_reed_solomon_example03.cpp.o
@@ -294,7 +294,7 @@ schifra_reed_solomon_example03.o: schifra_reed_solomon_example03.cpp.o
 
 # target to build an object file
 schifra_reed_solomon_example03.cpp.o:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example03.dir/build.make examples/basic/CMakeFiles/rs_example03.dir/schifra_reed_solomon_example03.cpp.o
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example03.dir/build.make examples/basic/CMakeFiles/rs_example03.dir/schifra_reed_solomon_example03.cpp.o
 .PHONY : schifra_reed_solomon_example03.cpp.o
 
 schifra_reed_solomon_example03.i: schifra_reed_solomon_example03.cpp.i
@@ -302,7 +302,7 @@ schifra_reed_solomon_example03.i: schifra_reed_solomon_example03.cpp.i
 
 # target to preprocess a source file
 schifra_reed_solomon_example03.cpp.i:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example03.dir/build.make examples/basic/CMakeFiles/rs_example03.dir/schifra_reed_solomon_example03.cpp.i
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example03.dir/build.make examples/basic/CMakeFiles/rs_example03.dir/schifra_reed_solomon_example03.cpp.i
 .PHONY : schifra_reed_solomon_example03.cpp.i
 
 schifra_reed_solomon_example03.s: schifra_reed_solomon_example03.cpp.s
@@ -310,7 +310,7 @@ schifra_reed_solomon_example03.s: schifra_reed_solomon_example03.cpp.s
 
 # target to generate assembly for a file
 schifra_reed_solomon_example03.cpp.s:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example03.dir/build.make examples/basic/CMakeFiles/rs_example03.dir/schifra_reed_solomon_example03.cpp.s
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example03.dir/build.make examples/basic/CMakeFiles/rs_example03.dir/schifra_reed_solomon_example03.cpp.s
 .PHONY : schifra_reed_solomon_example03.cpp.s
 
 schifra_reed_solomon_example04.o: schifra_reed_solomon_example04.cpp.o
@@ -318,7 +318,7 @@ schifra_reed_solomon_example04.o: schifra_reed_solomon_example04.cpp.o
 
 # target to build an object file
 schifra_reed_solomon_example04.cpp.o:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example04.dir/build.make examples/basic/CMakeFiles/rs_example04.dir/schifra_reed_solomon_example04.cpp.o
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example04.dir/build.make examples/basic/CMakeFiles/rs_example04.dir/schifra_reed_solomon_example04.cpp.o
 .PHONY : schifra_reed_solomon_example04.cpp.o
 
 schifra_reed_solomon_example04.i: schifra_reed_solomon_example04.cpp.i
@@ -326,7 +326,7 @@ schifra_reed_solomon_example04.i: schifra_reed_solomon_example04.cpp.i
 
 # target to preprocess a source file
 schifra_reed_solomon_example04.cpp.i:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example04.dir/build.make examples/basic/CMakeFiles/rs_example04.dir/schifra_reed_solomon_example04.cpp.i
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example04.dir/build.make examples/basic/CMakeFiles/rs_example04.dir/schifra_reed_solomon_example04.cpp.i
 .PHONY : schifra_reed_solomon_example04.cpp.i
 
 schifra_reed_solomon_example04.s: schifra_reed_solomon_example04.cpp.s
@@ -334,7 +334,7 @@ schifra_reed_solomon_example04.s: schifra_reed_solomon_example04.cpp.s
 
 # target to generate assembly for a file
 schifra_reed_solomon_example04.cpp.s:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example04.dir/build.make examples/basic/CMakeFiles/rs_example04.dir/schifra_reed_solomon_example04.cpp.s
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example04.dir/build.make examples/basic/CMakeFiles/rs_example04.dir/schifra_reed_solomon_example04.cpp.s
 .PHONY : schifra_reed_solomon_example04.cpp.s
 
 schifra_reed_solomon_example08.o: schifra_reed_solomon_example08.cpp.o
@@ -342,7 +342,7 @@ schifra_reed_solomon_example08.o: schifra_reed_solomon_example08.cpp.o
 
 # target to build an object file
 schifra_reed_solomon_example08.cpp.o:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example08.dir/build.make examples/basic/CMakeFiles/rs_example08.dir/schifra_reed_solomon_example08.cpp.o
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example08.dir/build.make examples/basic/CMakeFiles/rs_example08.dir/schifra_reed_solomon_example08.cpp.o
 .PHONY : schifra_reed_solomon_example08.cpp.o
 
 schifra_reed_solomon_example08.i: schifra_reed_solomon_example08.cpp.i
@@ -350,7 +350,7 @@ schifra_reed_solomon_example08.i: schifra_reed_solomon_example08.cpp.i
 
 # target to preprocess a source file
 schifra_reed_solomon_example08.cpp.i:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example08.dir/build.make examples/basic/CMakeFiles/rs_example08.dir/schifra_reed_solomon_example08.cpp.i
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example08.dir/build.make examples/basic/CMakeFiles/rs_example08.dir/schifra_reed_solomon_example08.cpp.i
 .PHONY : schifra_reed_solomon_example08.cpp.i
 
 schifra_reed_solomon_example08.s: schifra_reed_solomon_example08.cpp.s
@@ -358,7 +358,7 @@ schifra_reed_solomon_example08.s: schifra_reed_solomon_example08.cpp.s
 
 # target to generate assembly for a file
 schifra_reed_solomon_example08.cpp.s:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example08.dir/build.make examples/basic/CMakeFiles/rs_example08.dir/schifra_reed_solomon_example08.cpp.s
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example08.dir/build.make examples/basic/CMakeFiles/rs_example08.dir/schifra_reed_solomon_example08.cpp.s
 .PHONY : schifra_reed_solomon_example08.cpp.s
 
 # Help Target
@@ -405,6 +405,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

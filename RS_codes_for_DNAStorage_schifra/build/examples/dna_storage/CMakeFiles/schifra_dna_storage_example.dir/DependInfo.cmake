@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/shaminda/Documents/My Projects/schifra/examples/dna_storage/schifra_dna_storage_example.cpp" "examples/dna_storage/CMakeFiles/schifra_dna_storage_example.dir/schifra_dna_storage_example.cpp.o" "gcc" "examples/dna_storage/CMakeFiles/schifra_dna_storage_example.dir/schifra_dna_storage_example.cpp.o.d"
+  "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/examples/dna_storage/schifra_dna_storage_example.cpp" "examples/dna_storage/CMakeFiles/schifra_dna_storage_example.dir/schifra_dna_storage_example.cpp.o" "gcc" "examples/dna_storage/CMakeFiles/schifra_dna_storage_example.dir/schifra_dna_storage_example.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

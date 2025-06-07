@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/shaminda/Documents/My Projects/schifra"
+CMAKE_SOURCE_DIR = "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/shaminda/Documents/My Projects/schifra/build"
+CMAKE_BINARY_DIR = "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -142,14 +142,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" "/home/shaminda/Documents/My Projects/schifra/build/examples/dna_storage//CMakeFiles/progress.marks"
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/dna_storage/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" 0
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/examples/dna_storage//CMakeFiles/progress.marks"
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/dna_storage/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/dna_storage/clean
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/dna_storage/clean
 .PHONY : clean
 
 # The main clean target
@@ -158,22 +158,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/dna_storage/preinstall
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/dna_storage/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/dna_storage/preinstall
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/dna_storage/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 examples/dna_storage/CMakeFiles/schifra_dna_storage_example.dir/rule:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/dna_storage/CMakeFiles/schifra_dna_storage_example.dir/rule
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/dna_storage/CMakeFiles/schifra_dna_storage_example.dir/rule
 .PHONY : examples/dna_storage/CMakeFiles/schifra_dna_storage_example.dir/rule
 
 # Convenience name for target.
@@ -182,12 +182,12 @@ schifra_dna_storage_example: examples/dna_storage/CMakeFiles/schifra_dna_storage
 
 # fast build rule for target.
 schifra_dna_storage_example/fast:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(MAKE) $(MAKESILENT) -f examples/dna_storage/CMakeFiles/schifra_dna_storage_example.dir/build.make examples/dna_storage/CMakeFiles/schifra_dna_storage_example.dir/build
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(MAKE) $(MAKESILENT) -f examples/dna_storage/CMakeFiles/schifra_dna_storage_example.dir/build.make examples/dna_storage/CMakeFiles/schifra_dna_storage_example.dir/build
 .PHONY : schifra_dna_storage_example/fast
 
 # Convenience name for target.
 examples/dna_storage/CMakeFiles/test_dna_storage.dir/rule:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/dna_storage/CMakeFiles/test_dna_storage.dir/rule
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/dna_storage/CMakeFiles/test_dna_storage.dir/rule
 .PHONY : examples/dna_storage/CMakeFiles/test_dna_storage.dir/rule
 
 # Convenience name for target.
@@ -196,7 +196,7 @@ test_dna_storage: examples/dna_storage/CMakeFiles/test_dna_storage.dir/rule
 
 # fast build rule for target.
 test_dna_storage/fast:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(MAKE) $(MAKESILENT) -f examples/dna_storage/CMakeFiles/test_dna_storage.dir/build.make examples/dna_storage/CMakeFiles/test_dna_storage.dir/build
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(MAKE) $(MAKESILENT) -f examples/dna_storage/CMakeFiles/test_dna_storage.dir/build.make examples/dna_storage/CMakeFiles/test_dna_storage.dir/build
 .PHONY : test_dna_storage/fast
 
 schifra_dna_storage_example.o: schifra_dna_storage_example.cpp.o
@@ -204,7 +204,7 @@ schifra_dna_storage_example.o: schifra_dna_storage_example.cpp.o
 
 # target to build an object file
 schifra_dna_storage_example.cpp.o:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(MAKE) $(MAKESILENT) -f examples/dna_storage/CMakeFiles/schifra_dna_storage_example.dir/build.make examples/dna_storage/CMakeFiles/schifra_dna_storage_example.dir/schifra_dna_storage_example.cpp.o
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(MAKE) $(MAKESILENT) -f examples/dna_storage/CMakeFiles/schifra_dna_storage_example.dir/build.make examples/dna_storage/CMakeFiles/schifra_dna_storage_example.dir/schifra_dna_storage_example.cpp.o
 .PHONY : schifra_dna_storage_example.cpp.o
 
 schifra_dna_storage_example.i: schifra_dna_storage_example.cpp.i
@@ -212,7 +212,7 @@ schifra_dna_storage_example.i: schifra_dna_storage_example.cpp.i
 
 # target to preprocess a source file
 schifra_dna_storage_example.cpp.i:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(MAKE) $(MAKESILENT) -f examples/dna_storage/CMakeFiles/schifra_dna_storage_example.dir/build.make examples/dna_storage/CMakeFiles/schifra_dna_storage_example.dir/schifra_dna_storage_example.cpp.i
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(MAKE) $(MAKESILENT) -f examples/dna_storage/CMakeFiles/schifra_dna_storage_example.dir/build.make examples/dna_storage/CMakeFiles/schifra_dna_storage_example.dir/schifra_dna_storage_example.cpp.i
 .PHONY : schifra_dna_storage_example.cpp.i
 
 schifra_dna_storage_example.s: schifra_dna_storage_example.cpp.s
@@ -220,7 +220,7 @@ schifra_dna_storage_example.s: schifra_dna_storage_example.cpp.s
 
 # target to generate assembly for a file
 schifra_dna_storage_example.cpp.s:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(MAKE) $(MAKESILENT) -f examples/dna_storage/CMakeFiles/schifra_dna_storage_example.dir/build.make examples/dna_storage/CMakeFiles/schifra_dna_storage_example.dir/schifra_dna_storage_example.cpp.s
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(MAKE) $(MAKESILENT) -f examples/dna_storage/CMakeFiles/schifra_dna_storage_example.dir/build.make examples/dna_storage/CMakeFiles/schifra_dna_storage_example.dir/schifra_dna_storage_example.cpp.s
 .PHONY : schifra_dna_storage_example.cpp.s
 
 test_dna_storage.o: test_dna_storage.cpp.o
@@ -228,7 +228,7 @@ test_dna_storage.o: test_dna_storage.cpp.o
 
 # target to build an object file
 test_dna_storage.cpp.o:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(MAKE) $(MAKESILENT) -f examples/dna_storage/CMakeFiles/test_dna_storage.dir/build.make examples/dna_storage/CMakeFiles/test_dna_storage.dir/test_dna_storage.cpp.o
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(MAKE) $(MAKESILENT) -f examples/dna_storage/CMakeFiles/test_dna_storage.dir/build.make examples/dna_storage/CMakeFiles/test_dna_storage.dir/test_dna_storage.cpp.o
 .PHONY : test_dna_storage.cpp.o
 
 test_dna_storage.i: test_dna_storage.cpp.i
@@ -236,7 +236,7 @@ test_dna_storage.i: test_dna_storage.cpp.i
 
 # target to preprocess a source file
 test_dna_storage.cpp.i:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(MAKE) $(MAKESILENT) -f examples/dna_storage/CMakeFiles/test_dna_storage.dir/build.make examples/dna_storage/CMakeFiles/test_dna_storage.dir/test_dna_storage.cpp.i
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(MAKE) $(MAKESILENT) -f examples/dna_storage/CMakeFiles/test_dna_storage.dir/build.make examples/dna_storage/CMakeFiles/test_dna_storage.dir/test_dna_storage.cpp.i
 .PHONY : test_dna_storage.cpp.i
 
 test_dna_storage.s: test_dna_storage.cpp.s
@@ -244,7 +244,7 @@ test_dna_storage.s: test_dna_storage.cpp.s
 
 # target to generate assembly for a file
 test_dna_storage.cpp.s:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(MAKE) $(MAKESILENT) -f examples/dna_storage/CMakeFiles/test_dna_storage.dir/build.make examples/dna_storage/CMakeFiles/test_dna_storage.dir/test_dna_storage.cpp.s
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(MAKE) $(MAKESILENT) -f examples/dna_storage/CMakeFiles/test_dna_storage.dir/build.make examples/dna_storage/CMakeFiles/test_dna_storage.dir/test_dna_storage.cpp.s
 .PHONY : test_dna_storage.cpp.s
 
 # Help Target
@@ -279,6 +279,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd "/home/shaminda/Documents/My Projects/schifra/build" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

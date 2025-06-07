@@ -114,10 +114,6 @@ void process_file(const std::string& input_file,
 }
 
 int main(int argc, char* argv[]) {
-    // Default parameters
-    std::size_t n = 255;
-    std::size_t k = 223;
-    
     // Parse command line arguments
     if (argc < 2) {
         print_help();
@@ -130,9 +126,9 @@ int main(int argc, char* argv[]) {
     for (int i = 2; i < argc - 1; ++i) {
         std::string arg = argv[i];
         if (arg == "-n" && i + 1 < argc) {
-            n = std::stoul(argv[++i]);
+            ++i;  // Skip the value
         } else if (arg == "-k" && i + 1 < argc) {
-            k = std::stoul(argv[++i]);
+            ++i;  // Skip the value
         }
     }
     

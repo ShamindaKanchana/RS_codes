@@ -1,5 +1,5 @@
 examples/file_operations/CMakeFiles/file_interleaving.dir/schifra_reed_solomon_file_interleaving_example.cpp.o: \
- /home/shaminda/Documents/My\ Projects/schifra/examples/file_operations/schifra_reed_solomon_file_interleaving_example.cpp \
+ /home/shaminda/Documents/My\ Projects/RS_codes/RS_codes_for_DNAStorage_schifra/examples/file_operations/schifra_reed_solomon_file_interleaving_example.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/13/cstddef \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -150,7 +150,7 @@ examples/file_operations/CMakeFiles/file_interleaving.dir/schifra_reed_solomon_f
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc \
- /home/shaminda/Documents/My\ Projects/schifra/include/schifra/core/galois_field/field.hpp \
+ /home/shaminda/Documents/My\ Projects/RS_codes/RS_codes_for_DNAStorage_schifra/include/schifra/core/galois_field/field.hpp \
  /usr/include/c++/13/algorithm /usr/include/c++/13/bits/stl_algo.h \
  /usr/include/c++/13/bits/algorithmfwd.h \
  /usr/include/c++/13/bits/stl_heap.h \
@@ -162,29 +162,29 @@ examples/file_operations/CMakeFiles/file_interleaving.dir/schifra_reed_solomon_f
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc /usr/include/c++/13/limits \
- /home/shaminda/Documents/My\ Projects/schifra/include/schifra/reed_solomon/schifra_sequential_root_generator_polynomial_creator.hpp \
- /home/shaminda/Documents/My\ Projects/schifra/include/schifra/core/galois_field/element.hpp \
- /home/shaminda/Documents/My\ Projects/schifra/include/schifra/core/galois_field/polynomial.hpp \
+ /home/shaminda/Documents/My\ Projects/RS_codes/RS_codes_for_DNAStorage_schifra/include/schifra/reed_solomon/schifra_sequential_root_generator_polynomial_creator.hpp \
+ /home/shaminda/Documents/My\ Projects/RS_codes/RS_codes_for_DNAStorage_schifra/include/schifra/core/galois_field/element.hpp \
+ /home/shaminda/Documents/My\ Projects/RS_codes/RS_codes_for_DNAStorage_schifra/include/schifra/core/galois_field/polynomial.hpp \
  /usr/include/c++/13/cassert /usr/include/assert.h \
- /home/shaminda/Documents/My\ Projects/schifra/include/schifra/reed_solomon/schifra_reed_solomon_encoder.hpp \
- /home/shaminda/Documents/My\ Projects/schifra/include/schifra/reed_solomon/schifra_reed_solomon_block.hpp \
- /home/shaminda/Documents/My\ Projects/schifra/include/schifra/utils/schifra_ecc_traits.hpp \
- /home/shaminda/Documents/My\ Projects/schifra/include/schifra/reed_solomon/schifra_reed_solomon_decoder.hpp \
- /home/shaminda/Documents/My\ Projects/schifra/include/schifra/reed_solomon/schifra_reed_solomon_file_encoder.hpp \
+ /home/shaminda/Documents/My\ Projects/RS_codes/RS_codes_for_DNAStorage_schifra/include/schifra/reed_solomon/schifra_reed_solomon_encoder.hpp \
+ /home/shaminda/Documents/My\ Projects/RS_codes/RS_codes_for_DNAStorage_schifra/include/schifra/reed_solomon/schifra_reed_solomon_block.hpp \
+ /home/shaminda/Documents/My\ Projects/RS_codes/RS_codes_for_DNAStorage_schifra/include/schifra/utils/schifra_ecc_traits.hpp \
+ /home/shaminda/Documents/My\ Projects/RS_codes/RS_codes_for_DNAStorage_schifra/include/schifra/reed_solomon/schifra_reed_solomon_decoder.hpp \
+ /home/shaminda/Documents/My\ Projects/RS_codes/RS_codes_for_DNAStorage_schifra/include/schifra/reed_solomon/schifra_reed_solomon_file_encoder.hpp \
  /usr/include/c++/13/cstring /usr/include/string.h /usr/include/strings.h \
  /usr/include/c++/13/fstream /usr/include/c++/13/bits/codecvt.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
  /usr/include/c++/13/bits/fstream.tcc \
- /home/shaminda/Documents/My\ Projects/schifra/include/schifra/reed_solomon/schifra_reed_solomon_block.hpp \
- /home/shaminda/Documents/My\ Projects/schifra/include/schifra/reed_solomon/schifra_reed_solomon_encoder.hpp \
- /home/shaminda/Documents/My\ Projects/schifra/include/schifra/utils/schifra_fileio.hpp \
+ /home/shaminda/Documents/My\ Projects/RS_codes/RS_codes_for_DNAStorage_schifra/include/schifra/reed_solomon/schifra_reed_solomon_block.hpp \
+ /home/shaminda/Documents/My\ Projects/RS_codes/RS_codes_for_DNAStorage_schifra/include/schifra/reed_solomon/schifra_reed_solomon_encoder.hpp \
+ /home/shaminda/Documents/My\ Projects/RS_codes/RS_codes_for_DNAStorage_schifra/include/schifra/utils/schifra_fileio.hpp \
  /usr/include/c++/13/iterator /usr/include/c++/13/bits/stream_iterator.h \
- /home/shaminda/Documents/My\ Projects/schifra/include/schifra/utils/schifra_crc.hpp \
- /home/shaminda/Documents/My\ Projects/schifra/include/schifra/reed_solomon/schifra_reed_solomon_file_decoder.hpp \
- /home/shaminda/Documents/My\ Projects/schifra/include/schifra/reed_solomon/schifra_reed_solomon_decoder.hpp \
- /home/shaminda/Documents/My\ Projects/schifra/include/schifra/reed_solomon/schifra_reed_solomon_file_interleaver.hpp \
- /home/shaminda/Documents/My\ Projects/schifra/include/schifra/reed_solomon/schifra_reed_solomon_interleaving.hpp \
- /home/shaminda/Documents/My\ Projects/schifra/include/schifra/utils/schifra_error_processes.hpp \
+ /home/shaminda/Documents/My\ Projects/RS_codes/RS_codes_for_DNAStorage_schifra/include/schifra/utils/schifra_crc.hpp \
+ /home/shaminda/Documents/My\ Projects/RS_codes/RS_codes_for_DNAStorage_schifra/include/schifra/reed_solomon/schifra_reed_solomon_file_decoder.hpp \
+ /home/shaminda/Documents/My\ Projects/RS_codes/RS_codes_for_DNAStorage_schifra/include/schifra/reed_solomon/schifra_reed_solomon_decoder.hpp \
+ /home/shaminda/Documents/My\ Projects/RS_codes/RS_codes_for_DNAStorage_schifra/include/schifra/reed_solomon/schifra_reed_solomon_file_interleaver.hpp \
+ /home/shaminda/Documents/My\ Projects/RS_codes/RS_codes_for_DNAStorage_schifra/include/schifra/reed_solomon/schifra_reed_solomon_interleaving.hpp \
+ /home/shaminda/Documents/My\ Projects/RS_codes/RS_codes_for_DNAStorage_schifra/include/schifra/utils/schifra_error_processes.hpp \
  /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_deque.h \
  /usr/include/c++/13/bits/deque.tcc

@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/shaminda/Documents/My Projects/schifra"
+CMAKE_SOURCE_DIR = "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/shaminda/Documents/My Projects/schifra/build"
+CMAKE_BINARY_DIR = "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build"
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -187,14 +187,14 @@ examples/file_operations/clean: examples/file_operations/CMakeFiles/file_interle
 CMakeFiles/schifra_dna_storage.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/schifra_dna_storage.dir/build.make CMakeFiles/schifra_dna_storage.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/schifra_dna_storage.dir/build.make CMakeFiles/schifra_dna_storage.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" --progress-num=25,26 "Built target schifra_dna_storage"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" --progress-num=25,26 "Built target schifra_dna_storage"
 .PHONY : CMakeFiles/schifra_dna_storage.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/schifra_dna_storage.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" 2
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/schifra_dna_storage.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" 0
 .PHONY : CMakeFiles/schifra_dna_storage.dir/rule
 
 # Convenience name for target.
@@ -213,14 +213,14 @@ CMakeFiles/schifra_dna_storage.dir/clean:
 examples/basic/CMakeFiles/rs_example01.dir/all: CMakeFiles/schifra_dna_storage.dir/all
 	$(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example01.dir/build.make examples/basic/CMakeFiles/rs_example01.dir/depend
 	$(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example01.dir/build.make examples/basic/CMakeFiles/rs_example01.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" --progress-num=15,16 "Built target rs_example01"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" --progress-num=15,16 "Built target rs_example01"
 .PHONY : examples/basic/CMakeFiles/rs_example01.dir/all
 
 # Build rule for subdir invocation for target.
 examples/basic/CMakeFiles/rs_example01.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" 4
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/basic/CMakeFiles/rs_example01.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" 0
 .PHONY : examples/basic/CMakeFiles/rs_example01.dir/rule
 
 # Convenience name for target.
@@ -239,14 +239,14 @@ examples/basic/CMakeFiles/rs_example01.dir/clean:
 examples/basic/CMakeFiles/rs_example02.dir/all: CMakeFiles/schifra_dna_storage.dir/all
 	$(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example02.dir/build.make examples/basic/CMakeFiles/rs_example02.dir/depend
 	$(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example02.dir/build.make examples/basic/CMakeFiles/rs_example02.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" --progress-num=17,18 "Built target rs_example02"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" --progress-num=17,18 "Built target rs_example02"
 .PHONY : examples/basic/CMakeFiles/rs_example02.dir/all
 
 # Build rule for subdir invocation for target.
 examples/basic/CMakeFiles/rs_example02.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" 4
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/basic/CMakeFiles/rs_example02.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" 0
 .PHONY : examples/basic/CMakeFiles/rs_example02.dir/rule
 
 # Convenience name for target.
@@ -265,14 +265,14 @@ examples/basic/CMakeFiles/rs_example02.dir/clean:
 examples/basic/CMakeFiles/rs_example03.dir/all: CMakeFiles/schifra_dna_storage.dir/all
 	$(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example03.dir/build.make examples/basic/CMakeFiles/rs_example03.dir/depend
 	$(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example03.dir/build.make examples/basic/CMakeFiles/rs_example03.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" --progress-num=19,20 "Built target rs_example03"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" --progress-num=19,20 "Built target rs_example03"
 .PHONY : examples/basic/CMakeFiles/rs_example03.dir/all
 
 # Build rule for subdir invocation for target.
 examples/basic/CMakeFiles/rs_example03.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" 4
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/basic/CMakeFiles/rs_example03.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" 0
 .PHONY : examples/basic/CMakeFiles/rs_example03.dir/rule
 
 # Convenience name for target.
@@ -291,14 +291,14 @@ examples/basic/CMakeFiles/rs_example03.dir/clean:
 examples/basic/CMakeFiles/rs_example04.dir/all: CMakeFiles/schifra_dna_storage.dir/all
 	$(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example04.dir/build.make examples/basic/CMakeFiles/rs_example04.dir/depend
 	$(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example04.dir/build.make examples/basic/CMakeFiles/rs_example04.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" --progress-num=21,22 "Built target rs_example04"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" --progress-num=21,22 "Built target rs_example04"
 .PHONY : examples/basic/CMakeFiles/rs_example04.dir/all
 
 # Build rule for subdir invocation for target.
 examples/basic/CMakeFiles/rs_example04.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" 4
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/basic/CMakeFiles/rs_example04.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" 0
 .PHONY : examples/basic/CMakeFiles/rs_example04.dir/rule
 
 # Convenience name for target.
@@ -317,14 +317,14 @@ examples/basic/CMakeFiles/rs_example04.dir/clean:
 examples/basic/CMakeFiles/rs_example08.dir/all: CMakeFiles/schifra_dna_storage.dir/all
 	$(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example08.dir/build.make examples/basic/CMakeFiles/rs_example08.dir/depend
 	$(MAKE) $(MAKESILENT) -f examples/basic/CMakeFiles/rs_example08.dir/build.make examples/basic/CMakeFiles/rs_example08.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" --progress-num=23,24 "Built target rs_example08"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" --progress-num=23,24 "Built target rs_example08"
 .PHONY : examples/basic/CMakeFiles/rs_example08.dir/all
 
 # Build rule for subdir invocation for target.
 examples/basic/CMakeFiles/rs_example08.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" 4
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/basic/CMakeFiles/rs_example08.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" 0
 .PHONY : examples/basic/CMakeFiles/rs_example08.dir/rule
 
 # Convenience name for target.
@@ -343,14 +343,14 @@ examples/basic/CMakeFiles/rs_example08.dir/clean:
 examples/file_operations/CMakeFiles/file_encoding.dir/all: CMakeFiles/schifra_dna_storage.dir/all
 	$(MAKE) $(MAKESILENT) -f examples/file_operations/CMakeFiles/file_encoding.dir/build.make examples/file_operations/CMakeFiles/file_encoding.dir/depend
 	$(MAKE) $(MAKESILENT) -f examples/file_operations/CMakeFiles/file_encoding.dir/build.make examples/file_operations/CMakeFiles/file_encoding.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" --progress-num=3,4 "Built target file_encoding"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" --progress-num=3,4 "Built target file_encoding"
 .PHONY : examples/file_operations/CMakeFiles/file_encoding.dir/all
 
 # Build rule for subdir invocation for target.
 examples/file_operations/CMakeFiles/file_encoding.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" 4
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/file_operations/CMakeFiles/file_encoding.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" 0
 .PHONY : examples/file_operations/CMakeFiles/file_encoding.dir/rule
 
 # Convenience name for target.
@@ -369,14 +369,14 @@ examples/file_operations/CMakeFiles/file_encoding.dir/clean:
 examples/file_operations/CMakeFiles/file_decoding.dir/all: CMakeFiles/schifra_dna_storage.dir/all
 	$(MAKE) $(MAKESILENT) -f examples/file_operations/CMakeFiles/file_decoding.dir/build.make examples/file_operations/CMakeFiles/file_decoding.dir/depend
 	$(MAKE) $(MAKESILENT) -f examples/file_operations/CMakeFiles/file_decoding.dir/build.make examples/file_operations/CMakeFiles/file_decoding.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" --progress-num=1,2 "Built target file_decoding"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" --progress-num=1,2 "Built target file_decoding"
 .PHONY : examples/file_operations/CMakeFiles/file_decoding.dir/all
 
 # Build rule for subdir invocation for target.
 examples/file_operations/CMakeFiles/file_decoding.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" 4
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/file_operations/CMakeFiles/file_decoding.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" 0
 .PHONY : examples/file_operations/CMakeFiles/file_decoding.dir/rule
 
 # Convenience name for target.
@@ -395,14 +395,14 @@ examples/file_operations/CMakeFiles/file_decoding.dir/clean:
 examples/file_operations/CMakeFiles/file_interleaving.dir/all: CMakeFiles/schifra_dna_storage.dir/all
 	$(MAKE) $(MAKESILENT) -f examples/file_operations/CMakeFiles/file_interleaving.dir/build.make examples/file_operations/CMakeFiles/file_interleaving.dir/depend
 	$(MAKE) $(MAKESILENT) -f examples/file_operations/CMakeFiles/file_interleaving.dir/build.make examples/file_operations/CMakeFiles/file_interleaving.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" --progress-num=5,6 "Built target file_interleaving"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" --progress-num=5,6 "Built target file_interleaving"
 .PHONY : examples/file_operations/CMakeFiles/file_interleaving.dir/all
 
 # Build rule for subdir invocation for target.
 examples/file_operations/CMakeFiles/file_interleaving.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" 4
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/file_operations/CMakeFiles/file_interleaving.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" 0
 .PHONY : examples/file_operations/CMakeFiles/file_interleaving.dir/rule
 
 # Convenience name for target.
@@ -421,14 +421,14 @@ examples/file_operations/CMakeFiles/file_interleaving.dir/clean:
 examples/advanced/CMakeFiles/rs_advanced05.dir/all: CMakeFiles/schifra_dna_storage.dir/all
 	$(MAKE) $(MAKESILENT) -f examples/advanced/CMakeFiles/rs_advanced05.dir/build.make examples/advanced/CMakeFiles/rs_advanced05.dir/depend
 	$(MAKE) $(MAKESILENT) -f examples/advanced/CMakeFiles/rs_advanced05.dir/build.make examples/advanced/CMakeFiles/rs_advanced05.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" --progress-num=7,8 "Built target rs_advanced05"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" --progress-num=7,8 "Built target rs_advanced05"
 .PHONY : examples/advanced/CMakeFiles/rs_advanced05.dir/all
 
 # Build rule for subdir invocation for target.
 examples/advanced/CMakeFiles/rs_advanced05.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" 4
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/advanced/CMakeFiles/rs_advanced05.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" 0
 .PHONY : examples/advanced/CMakeFiles/rs_advanced05.dir/rule
 
 # Convenience name for target.
@@ -447,14 +447,14 @@ examples/advanced/CMakeFiles/rs_advanced05.dir/clean:
 examples/advanced/CMakeFiles/rs_advanced06.dir/all: CMakeFiles/schifra_dna_storage.dir/all
 	$(MAKE) $(MAKESILENT) -f examples/advanced/CMakeFiles/rs_advanced06.dir/build.make examples/advanced/CMakeFiles/rs_advanced06.dir/depend
 	$(MAKE) $(MAKESILENT) -f examples/advanced/CMakeFiles/rs_advanced06.dir/build.make examples/advanced/CMakeFiles/rs_advanced06.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" --progress-num=9,10 "Built target rs_advanced06"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" --progress-num=9,10 "Built target rs_advanced06"
 .PHONY : examples/advanced/CMakeFiles/rs_advanced06.dir/all
 
 # Build rule for subdir invocation for target.
 examples/advanced/CMakeFiles/rs_advanced06.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" 4
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/advanced/CMakeFiles/rs_advanced06.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" 0
 .PHONY : examples/advanced/CMakeFiles/rs_advanced06.dir/rule
 
 # Convenience name for target.
@@ -473,14 +473,14 @@ examples/advanced/CMakeFiles/rs_advanced06.dir/clean:
 examples/advanced/CMakeFiles/rs_advanced07.dir/all: CMakeFiles/schifra_dna_storage.dir/all
 	$(MAKE) $(MAKESILENT) -f examples/advanced/CMakeFiles/rs_advanced07.dir/build.make examples/advanced/CMakeFiles/rs_advanced07.dir/depend
 	$(MAKE) $(MAKESILENT) -f examples/advanced/CMakeFiles/rs_advanced07.dir/build.make examples/advanced/CMakeFiles/rs_advanced07.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" --progress-num=11,12 "Built target rs_advanced07"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" --progress-num=11,12 "Built target rs_advanced07"
 .PHONY : examples/advanced/CMakeFiles/rs_advanced07.dir/all
 
 # Build rule for subdir invocation for target.
 examples/advanced/CMakeFiles/rs_advanced07.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" 4
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/advanced/CMakeFiles/rs_advanced07.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" 0
 .PHONY : examples/advanced/CMakeFiles/rs_advanced07.dir/rule
 
 # Convenience name for target.
@@ -499,14 +499,14 @@ examples/advanced/CMakeFiles/rs_advanced07.dir/clean:
 examples/advanced/CMakeFiles/rs_advanced09.dir/all: CMakeFiles/schifra_dna_storage.dir/all
 	$(MAKE) $(MAKESILENT) -f examples/advanced/CMakeFiles/rs_advanced09.dir/build.make examples/advanced/CMakeFiles/rs_advanced09.dir/depend
 	$(MAKE) $(MAKESILENT) -f examples/advanced/CMakeFiles/rs_advanced09.dir/build.make examples/advanced/CMakeFiles/rs_advanced09.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" --progress-num=13,14 "Built target rs_advanced09"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" --progress-num=13,14 "Built target rs_advanced09"
 .PHONY : examples/advanced/CMakeFiles/rs_advanced09.dir/all
 
 # Build rule for subdir invocation for target.
 examples/advanced/CMakeFiles/rs_advanced09.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" 4
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/advanced/CMakeFiles/rs_advanced09.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" 0
 .PHONY : examples/advanced/CMakeFiles/rs_advanced09.dir/rule
 
 # Convenience name for target.
@@ -525,14 +525,14 @@ examples/advanced/CMakeFiles/rs_advanced09.dir/clean:
 examples/dna_storage/CMakeFiles/schifra_dna_storage_example.dir/all: CMakeFiles/schifra_dna_storage.dir/all
 	$(MAKE) $(MAKESILENT) -f examples/dna_storage/CMakeFiles/schifra_dna_storage_example.dir/build.make examples/dna_storage/CMakeFiles/schifra_dna_storage_example.dir/depend
 	$(MAKE) $(MAKESILENT) -f examples/dna_storage/CMakeFiles/schifra_dna_storage_example.dir/build.make examples/dna_storage/CMakeFiles/schifra_dna_storage_example.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" --progress-num=27,28 "Built target schifra_dna_storage_example"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" --progress-num=27,28 "Built target schifra_dna_storage_example"
 .PHONY : examples/dna_storage/CMakeFiles/schifra_dna_storage_example.dir/all
 
 # Build rule for subdir invocation for target.
 examples/dna_storage/CMakeFiles/schifra_dna_storage_example.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" 4
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/dna_storage/CMakeFiles/schifra_dna_storage_example.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" 0
 .PHONY : examples/dna_storage/CMakeFiles/schifra_dna_storage_example.dir/rule
 
 # Convenience name for target.
@@ -551,14 +551,14 @@ examples/dna_storage/CMakeFiles/schifra_dna_storage_example.dir/clean:
 examples/dna_storage/CMakeFiles/test_dna_storage.dir/all: CMakeFiles/schifra_dna_storage.dir/all
 	$(MAKE) $(MAKESILENT) -f examples/dna_storage/CMakeFiles/test_dna_storage.dir/build.make examples/dna_storage/CMakeFiles/test_dna_storage.dir/depend
 	$(MAKE) $(MAKESILENT) -f examples/dna_storage/CMakeFiles/test_dna_storage.dir/build.make examples/dna_storage/CMakeFiles/test_dna_storage.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" --progress-num=29,30 "Built target test_dna_storage"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" --progress-num=29,30 "Built target test_dna_storage"
 .PHONY : examples/dna_storage/CMakeFiles/test_dna_storage.dir/all
 
 # Build rule for subdir invocation for target.
 examples/dna_storage/CMakeFiles/test_dna_storage.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" 4
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples/dna_storage/CMakeFiles/test_dna_storage.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/schifra/build/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build/CMakeFiles" 0
 .PHONY : examples/dna_storage/CMakeFiles/test_dna_storage.dir/rule
 
 # Convenience name for target.

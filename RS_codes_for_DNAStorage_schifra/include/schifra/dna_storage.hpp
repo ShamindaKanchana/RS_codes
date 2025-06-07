@@ -147,23 +147,26 @@ public:
         }
         // Encode the data
         bool encode_ok = rs_encoder.encode(block);
-        std::cout << "Encode returned: " << encode_ok << std::endl;
         if (!encode_ok) {
             throw std::runtime_error("Reed-Solomon encoding failed");
         }
-        // Debug print: Print block contents after encoding
-        std::cout << "Block after encoding: ";
-        for (std::size_t i = 0; i < CodeLength; ++i) {
-            std::cout << std::hex << std::setw(2) << std::setfill('0') << (int)block.data[i] << " ";
-        }
-        std::cout << std::dec << std::endl;
-        // Extract FEC symbols (as bytes) from block.data[DataLength..CodeLength-1]
+        
+        // Extract FEC symbols and convert to DNA bases
+        std::string encoded_dna = dna_sequence;  // Start with original sequence
         std::vector<std::uint8_t> ecc_symbols(FecLength);
         for (std::size_t i = 0; i < FecLength; ++i) {
             ecc_symbols[i] = static_cast<std::uint8_t>(block.data[DataLength + i]);
+            // Convert ECC symbol to DNA base (using modulo 4 to map to A,C,G,T)
+            std::uint8_t symbol = ecc_symbols[i] % 4;
+            auto it = symbol_to_dna_.find(symbol);
+            if (it != symbol_to_dna_.end()) {
+                encoded_dna += it->second;
+            } else {
+                throw std::runtime_error("Invalid symbol value in ECC: " + std::to_string(symbol));
+            }
         }
-        // Return only the original data as DNA, ECC as bytes
-        return {dna_sequence, ecc_symbols};
+        
+        return {encoded_dna, ecc_symbols};
     }
     
     // Decode a DNA sequence with error correction
@@ -171,19 +174,23 @@ public:
         if (!validate_dna(dna_sequence)) {
             throw std::invalid_argument("Invalid DNA sequence: must contain only A, C, G, T characters");
         }
-        if (dna_sequence.length() != DataLength) {
-            throw std::invalid_argument("DNA sequence length must be exactly " + std::to_string(DataLength) + " characters");
+        if (dna_sequence.length() != CodeLength) {  // Now expecting full length including ECC
+            throw std::invalid_argument("DNA sequence length must be exactly " + std::to_string(CodeLength) + " characters");
         }
         if (ecc_symbols.size() != FecLength) {
             throw std::invalid_argument("ECC symbols length must be exactly " + std::to_string(FecLength) + " symbols");
         }
-        // Convert DNA to symbols
-        std::vector<std::uint8_t> symbols = dna_to_symbols(dna_sequence);
+        
+        // Extract data portion (first DataLength characters)
+        std::string data_portion = dna_sequence.substr(0, DataLength);
+        std::vector<std::uint8_t> symbols = dna_to_symbols(data_portion);
+        
         // Create generator polynomial
         schifra::galois::field_polynomial generator_poly(*field_);
         if (!schifra::make_sequential_root_generator_polynomial(*field_, 1, FecLength, generator_poly)) {
             throw std::runtime_error("Failed to create generator polynomial");
         }
+        
         // Create decoder
         schifra::reed_solomon::block<15, 4> block;
         // Copy data to block.data[0..DataLength-1]
@@ -194,17 +201,13 @@ public:
         for (std::size_t i = 0; i < FecLength; ++i) {
             block.data[DataLength + i] = static_cast<schifra::galois::field_symbol>(ecc_symbols[i]);
         }
-        // Debug print: Print block contents before decoding
-        std::cout << "Block before decoding: ";
-        for (std::size_t i = 0; i < CodeLength; ++i) {
-            std::cout << std::hex << std::setw(2) << std::setfill('0') << (int)block.data[i] << " ";
-        }
-        std::cout << std::dec << std::endl;
+        
         // Decode the data
         schifra::reed_solomon::decoder<15, 4> rs_decoder(*field_, 1);
         if (!rs_decoder.decode(block)) {
             throw std::runtime_error("Reed-Solomon decoding failed");
         }
+        
         // Convert symbols back to DNA (only the data portion)
         std::string decoded_dna = symbols_to_dna(std::vector<std::uint8_t>(block.data, block.data + DataLength));
         return decoded_dna;

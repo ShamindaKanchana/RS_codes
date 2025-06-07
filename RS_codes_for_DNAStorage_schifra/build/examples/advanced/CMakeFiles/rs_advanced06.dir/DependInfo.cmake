@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/shaminda/Documents/My Projects/schifra/examples/advanced/schifra_reed_solomon_example06.cpp" "examples/advanced/CMakeFiles/rs_advanced06.dir/schifra_reed_solomon_example06.cpp.o" "gcc" "examples/advanced/CMakeFiles/rs_advanced06.dir/schifra_reed_solomon_example06.cpp.o.d"
+  "/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/examples/advanced/schifra_reed_solomon_example06.cpp" "examples/advanced/CMakeFiles/rs_advanced06.dir/schifra_reed_solomon_example06.cpp.o" "gcc" "examples/advanced/CMakeFiles/rs_advanced06.dir/schifra_reed_solomon_example06.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

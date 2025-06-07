@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/file_interleaving.dir/schifra_reed_solomon_file_interleaving_example.cpp.o -o file_interleaving  -Wl,-rpath,"/home/shaminda/Documents/My Projects/schifra/build" ../../libschifra_dna_storage.so 
+/usr/bin/c++ CMakeFiles/file_interleaving.dir/schifra_reed_solomon_file_interleaving_example.cpp.o -o file_interleaving  -Wl,-rpath,"/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" ../../libschifra_dna_storage.so 
