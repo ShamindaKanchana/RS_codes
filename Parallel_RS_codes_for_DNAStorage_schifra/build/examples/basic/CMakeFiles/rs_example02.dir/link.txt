@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/rs_example02.dir/schifra_reed_solomon_example02.cpp.o -o rs_example02  -Wl,-rpath,"/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" ../../libschifra_dna_storage.so 

@@ -1,0 +1,9 @@
+# File operation examples
+add_executable(file_encoding schifra_reed_solomon_file_encoding_example.cpp)
+target_link_libraries(file_encoding PRIVATE schifra)
+
+add_executable(file_decoding schifra_reed_solomon_file_decoding_example.cpp)
+target_link_libraries(file_decoding PRIVATE schifra)
+
+add_executable(file_interleaving schifra_reed_solomon_file_interleaving_example.cpp)
+target_link_libraries(file_interleaving PRIVATE schifra)

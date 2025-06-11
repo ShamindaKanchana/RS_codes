@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/test_dna_storage.dir/test_dna_storage.cpp.o -o test_dna_storage  -Wl,-rpath,"/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" ../../libschifra_dna_storage.so 

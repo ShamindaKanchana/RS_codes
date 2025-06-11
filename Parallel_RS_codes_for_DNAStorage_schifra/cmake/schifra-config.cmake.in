@@ -1,0 +1,17 @@
+@PACKAGE_INIT@
+
+include(CMakeFindDependencyMacro)
+
+# Handle dependencies (if any)
+# find_dependency(...)
+
+
+# Include the targets file
+include("${CMAKE_CURRENT_LIST_DIR}/schifra-targets.cmake")
+
+# Set include directories
+get_filename_component(SCHIFRA_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+get_filename_component(SCHIFRA_INCLUDE_DIRS "${SCHIFRA_CMAKE_DIR}/../../../include" ABSOLUTE)
+
+# Verify the library was found
+check_required_components(schifra)

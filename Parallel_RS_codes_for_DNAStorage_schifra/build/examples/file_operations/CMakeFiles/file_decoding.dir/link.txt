@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/file_decoding.dir/schifra_reed_solomon_file_decoding_example.cpp.o -o file_decoding  -Wl,-rpath,"/home/shaminda/Documents/My Projects/RS_codes/RS_codes_for_DNAStorage_schifra/build" ../../libschifra_dna_storage.so 
