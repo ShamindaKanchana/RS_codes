@@ -70,13 +70,58 @@ This project implements a parallelized Reed-Solomon (15,11) error correction sys
 - Schifra library
 
 ### Build Instructions
-```bash
-g++ -fopenmp -O3 -I /path/to/schifra/include parallel_dna_data_test.cpp -o dna_benchmark
-```
+
+1. Navigate to the dna_storage directory:
+   ```bash
+   cd /path/to/RS_codes_for_DNAStorage_schifra/examples/dna_storage
+   ```
+
+2. Compile the benchmark:
+   ```bash
+   g++ -fopenmp -O3 -I /home/shaminda/Documents/My_Projects/RS_codes/RS_codes_for_DNAStorage_schifra/include parallel_dna_data_test.cpp -o dna_benchmark
+   ```
 
 ### Running Benchmarks
+
+From the dna_storage directory, execute:
 ```bash
 ./dna_benchmark
+```
+
+This will run the full suite of benchmarks, including:
+- Single and multi-threaded tests
+- Different sequence lengths (1K, 10K, 100K bases)
+- Different error rates (1-2 errors per block)
+- Performance metrics and error correction statistics
+
+### Expected Output
+
+The benchmark will display detailed results for each test case, including:
+- Processing times for encoding and decoding
+- Throughput in MB/s
+- Error correction rates
+- Block processing statistics
+
+Results will be shown in the format:
+```
+=== Testing with 10000 bases (9.77 KB) ===
+Processed 910 blocks using 1 threads in 21 ms
+
+=== Single-threaded ===
+Benchmark Results:
+-----------------
+Total blocks processed:       910
+Total errors introduced:      910
+Total errors corrected:       636
+Error correction rate:        69.89%
+Total encoding time:          4.32 ms
+Total decoding time:          9.70 ms
+Total processing time:        21.54 ms
+Average block processing time: 0.0237 ms/block
+Throughput:                   0.44 MB/s
+
+Decoding successful - Output matches input
+============================================================
 ```
 
 ## Implementation Details

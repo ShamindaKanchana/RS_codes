@@ -139,7 +139,7 @@ namespace schifra
                /*
                   Too many errors\erasures! 2E + S <= fec_length
                    L =  E + S
-                   E =  L - S
+                   E =  L -template S
                   2E = 2L - 2S
                   2E + S = 2L - 2S + S
                          = 2L - S
