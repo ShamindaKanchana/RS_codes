@@ -249,8 +249,4 @@ The system implements a highly optimized parallel processing pipeline:
 3. **Research Directions**:
    - Machine learning for error pattern prediction
    - Hybrid error correction schemes
-   - Energy-efficient implementations for embedded systems
-
-## License
-
-[Specify your license here]
+   
