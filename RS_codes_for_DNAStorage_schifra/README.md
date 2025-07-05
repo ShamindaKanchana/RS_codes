@@ -193,6 +193,117 @@ Avg block processing time: 0.0053 ms/block
 Throughput:                1.96 MB/s
 ```
 
+## Performance Testing Methodology
+
+### How We Tested
+
+The performance statistics shown were collected using Linux's `perf` tool, which provides detailed hardware and software event monitoring. The benchmark was executed with the following command:
+
+```bash
+perf stat -e task-clock,cycles,instructions,cache-references,cache-misses ./parallel_benchmark
+```
+
+### Interpreting the Results
+
+Here's what each metric in the performance counter output means:
+
+```
+1,512,881.49 msec task-clock     # Total CPU time used (1,512.88 seconds)
+2,409,957,552,044 cycles         # Total CPU cycles
+4,197,734,108,325 instructions   # Total instructions executed
+1.74 insn per cycle             # Instructions per cycle (IPC)
+3,813,389,736 cache-references   # Cache accesses
+730,779,747 cache-misses        # Cache misses (19.16% miss rate)
+```
+
+Key insights from these metrics:
+- **Task-clock**: The total CPU time used (1,512.88 seconds)
+- **Instructions per Cycle (IPC)**: 1.74 indicates good instruction-level parallelism
+- **Cache Miss Rate**: 19.16% suggests some memory access bottlenecks
+- **Total Time**: The benchmark completed in ~500.67 seconds of wall-clock time
+
+### Running Performance Tests
+
+#### On Ubuntu Linux (tested environment)
+
+The performance statistics shown in this document were collected on an Ubuntu Linux system using the `perf` tool. Here's how to reproduce these measurements:
+
+1. Install required tools:
+   ```bash
+   # Install perf and other performance tools
+   sudo apt-get update
+   sudo apt-get install linux-tools-common linux-tools-generic linux-tools-$(uname -r)
+   
+   # For flame graph generation (optional)
+   sudo apt-get install git
+   git clone --depth=1 https://github.com/brendangregg/FlameGraph
+   export PATH="$PATH:$(pwd)/FlameGraph"
+   ```
+
+2. Run the benchmark with performance monitoring:
+   ```bash
+   # Basic performance counters
+   perf stat -e task-clock,cycles,instructions,cache-references,cache-misses ./parallel_benchmark
+   
+   # More detailed analysis
+   perf stat -d ./parallel_benchmark
+   
+   # Generate a flame graph (visualize CPU usage)
+   perf record -g ./parallel_benchmark
+   perf script | stackcollapse-perf.pl | flamegraph.pl > flamegraph.svg
+   ```
+
+3. For continuous monitoring:
+   ```bash
+   watch -n 1 "perf stat -e task-clock,cycles,instructions,cache-references,cache-misses -a sleep 1 2>&1 | grep -E 'task-clock|instructions|cache-misses'"
+   ```
+
+#### Windows Performance Analysis
+
+For Windows users, you can use the following tools to analyze performance:
+
+1. **Windows Performance Recorder (WPR) & Windows Performance Analyzer (WPA)**
+   - Pre-installed on Windows 10/11 (search for "Windows Performance Recorder" in Start)
+   - Steps to use:
+     1. Open Windows Performance Recorder
+     2. Select "First Level" or "CPU Usage" profile
+     3. Click "Start" and run your benchmark
+     4. Click "Save" to stop recording
+     5. Open the .etl file in Windows Performance Analyzer (WPA)
+
+2. **Windows Subsystem for Linux (WSL) with perf**
+   - Install WSL2 with Ubuntu
+   - Install perf in WSL:
+     ```bash
+     sudo apt update
+     sudo apt install linux-tools-common linux-tools-generic linux-tools-$(uname -r)
+     ```
+   - Use perf commands as shown in the Linux section
+
+3. **Visual Studio Profiler** (if using Visual Studio)
+   - Built into Visual Studio 2019/2022
+   - Go to Debug > Performance Profiler
+   - Select "Performance Profiler" and click Start
+
+**Windows Limitations:**
+- WPR/WPA has higher overhead than Linux's perf
+- Some low-level hardware counters may not be accessible
+- Memory usage metrics might be less detailed than Linux
+- WSL2 performance characteristics may differ from native Linux
+
+#### macOS Performance Analysis
+
+For macOS users:
+- **Instruments** (part of Xcode)
+- **`dtrace`** (command-line tool)
+- **`sample`** command for stack sampling
+
+#### Other Linux Distributions
+Package names and installation commands may vary. For example:
+- **Fedora/CentOS/RHEL**: `sudo dnf install perf`
+- **Arch Linux**: `sudo pacman -S perf`
+- **openSUSE**: `sudo zypper install perf`
+
 ## Implementation Details
 
 The system implements a highly optimized parallel processing pipeline:
