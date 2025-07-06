@@ -130,12 +130,9 @@ Generating random DNA sequence...
 === Testing with 1 error per block ===
 Benchmark Results:
 -----------------
-Sequence length:           1000000 bases
+Sequence length:           1000000 bases (976.56 KB)
 Threads used:              4
 Total blocks processed:    90910
-Total errors introduced:   90910
-Total errors corrected:    66638
-Error correction rate:     73.30%
 Total encoding time:       172.15 ms
 Total decoding time:       397.62 ms
 Total processing time:     229.37 ms
@@ -150,12 +147,9 @@ Available threads: 4
 === 1 thread ===
 Benchmark Results:
 -----------------
-Sequence length:           1000000 bases
+Sequence length:           1000000 bases (976.56 KB)
 Threads used:              1
 Total blocks processed:    90910
-Total errors introduced:   90910
-Total errors corrected:    66611
-Error correction rate:     73.27%
 Total encoding time:       196.38 ms
 Total decoding time:       435.72 ms
 Total processing time:     948.55 ms
@@ -165,12 +159,9 @@ Throughput:                1.01 MB/s
 === 2 threads ===
 Benchmark Results:
 -----------------
-Sequence length:           1000000 bases
+Sequence length:           1000000 bases (976.56 KB)
 Threads used:              2
 Total blocks processed:    90910
-Total errors introduced:   90910
-Total errors corrected:    66629
-Error correction rate:     73.29%
 Total encoding time:       165.44 ms
 Total decoding time:       376.79 ms
 Total processing time:     407.29 ms
@@ -180,17 +171,14 @@ Throughput:                2.34 MB/s
 === 4 threads ===
 Benchmark Results:
 -----------------
-Sequence length:           1000000 bases
+Sequence length:           1000000 bases (976.56 KB)
 Threads used:              4
 Total blocks processed:    90910
-Total errors introduced:   90910
-Total errors corrected:    66619
-Error correction rate:     73.28%
-Total encoding time:       367.26 ms
-Total decoding time:       843.58 ms
-Total processing time:     486.20 ms
-Avg block processing time: 0.0053 ms/block
-Throughput:                1.96 MB/s
+Total encoding time:       172.15 ms
+Total decoding time:       397.62 ms
+Total processing time:     229.37 ms
+Avg block processing time: 0.0025 ms/block
+Throughput:                4.16 MB/s
 ```
 
 ## Performance Testing Methodology
@@ -411,19 +399,3 @@ The system implements a highly optimized parallel processing pipeline:
    - Vectorized operations where possible
    - Reduced branching in critical paths
 
-## Future Work
-
-1. **Performance Enhancements**:
-   - SIMD vectorization for encoding/decoding
-   - GPU acceleration using CUDA/OpenCL
-   - Support for larger block sizes and code parameters
-
-2. **Advanced Features**:
-   - Support for burst error correction
-   - Adaptive error correction levels
-   - Integration with DNA synthesis/sequencing pipelines
-
-3. **Research Directions**:
-   - Machine learning for error pattern prediction
-   - Hybrid error correction schemes
-   

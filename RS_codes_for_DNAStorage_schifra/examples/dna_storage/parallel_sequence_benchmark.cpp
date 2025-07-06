@@ -35,20 +35,12 @@ using dna_storage_type = schifra::dna_storage<CODE_LENGTH, ECC_SYMBOLS, BLOCK_SI
 // Structure to store benchmarking results
 struct BenchmarkResult {
     size_t total_blocks = 0;
-    size_t total_errors_introduced = 0;
-    size_t total_errors_corrected = 0;
     double total_encoding_time = 0.0;    // in milliseconds
     double total_decoding_time = 0.0;     // in milliseconds
     double total_processing_time = 0.0;   // in milliseconds
     double throughput = 0.0;              // in MB/s
     int num_threads = 1;
     size_t sequence_length = 0;
-    
-    // Calculate error correction rate
-    double error_correction_rate() const {
-        return (total_errors_introduced > 0) ? 
-               (static_cast<double>(total_errors_corrected) / total_errors_introduced) : 1.0;
-    }
     
     // Calculate average block processing time
     double avg_block_processing_time() const {
@@ -58,11 +50,9 @@ struct BenchmarkResult {
 
 // Structure to store block processing statistics with cache alignment
 struct alignas(64) BlockStats {
-    size_t errors_introduced = 0;
-    size_t errors_corrected = 0;
     double encoding_time = 0.0;   // in milliseconds
     double decoding_time = 0.0;    // in milliseconds
-    char padding[64 - (2 * sizeof(size_t) + 2 * sizeof(double)) % 64];
+    char padding[64 - (2 * sizeof(double)) % 64];
 };
 
 // Function to split a string into chunks of specified size
@@ -135,7 +125,7 @@ BenchmarkResult process_dna_sequence_benchmark(const std::string& input_sequence
     std::vector<BlockStats> block_stats(blocks.size());
     
     // Process blocks in parallel
-    #pragma omp parallel for schedule(static)
+    #pragma omp parallel for schedule(dynamic, 32)
     for (size_t i = 0; i < blocks.size(); ++i) {
         try {
             dna_storage_type dna_storage;
@@ -162,19 +152,11 @@ BenchmarkResult process_dna_sequence_benchmark(const std::string& input_sequence
             std::string corrected = dna_storage.decode(corrupted, ecc);
             auto decode_end = std::chrono::high_resolution_clock::now();
             
-            // Update stats
+            // Update timing stats
             stats.encoding_time = std::chrono::duration<double, std::milli>(
                 encode_end - encode_start).count();
             stats.decoding_time = std::chrono::duration<double, std::milli>(
                 decode_end - decode_start).count();
-            stats.errors_introduced = errors_to_introduce;
-            
-            // Count corrected errors
-            for (size_t j = 0; j < std::min(corrupted.size(), corrected.size()); ++j) {
-                if (corrupted[j] != corrected[j]) {
-                    stats.errors_corrected++;
-                }
-            }
             
             // Store results
             block_stats[i] = stats;
@@ -187,10 +169,8 @@ BenchmarkResult process_dna_sequence_benchmark(const std::string& input_sequence
         }
     }
     
-    // Aggregate results
+    // Aggregate timing results
     for (const auto& stats : block_stats) {
-        result.total_errors_introduced += stats.errors_introduced;
-        result.total_errors_corrected += stats.errors_corrected;
         result.total_encoding_time += stats.encoding_time;
         result.total_decoding_time += stats.decoding_time;
     }
@@ -215,13 +195,10 @@ void print_benchmark_results(const BenchmarkResult& result, const std::string& l
     
     std::cout << "Benchmark Results:" << std::endl;
     std::cout << "-----------------" << std::endl;
-    std::cout << "Sequence length:           " << result.sequence_length << " bases" << std::endl;
+    std::cout << "Sequence length:           " << result.sequence_length << " bases (" 
+              << (result.sequence_length / 1024.0) << " KB)" << std::endl;
     std::cout << "Threads used:              " << result.num_threads << std::endl;
     std::cout << "Total blocks processed:    " << result.total_blocks << std::endl;
-    std::cout << "Total errors introduced:   " << result.total_errors_introduced << std::endl;
-    std::cout << "Total errors corrected:    " << result.total_errors_corrected << std::endl;
-    std::cout << "Error correction rate:     " << std::fixed << std::setprecision(2) 
-              << (result.error_correction_rate() * 100.0) << "%" << std::endl;
     std::cout << "Total encoding time:       " << std::fixed << std::setprecision(2) 
               << result.total_encoding_time << " ms" << std::endl;
     std::cout << "Total decoding time:       " << std::fixed << std::setprecision(2) 
