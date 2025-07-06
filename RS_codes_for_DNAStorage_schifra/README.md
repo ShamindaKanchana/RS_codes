@@ -304,6 +304,72 @@ Package names and installation commands may vary. For example:
 - **Arch Linux**: `sudo pacman -S perf`
 - **openSUSE**: `sudo zypper install perf`
 
+## Scheduling Strategy Analysis
+
+### Static vs Dynamic Scheduling
+
+The benchmark implements two OpenMP scheduling strategies for parallel block processing:
+
+#### Static Scheduling
+```cpp
+#pragma omp parallel for schedule(static)
+for (size_t i = 0; i < blocks.size(); ++i) {
+    // Process block i
+}
+```
+- **How it works**:
+  - Divides iterations into equal-sized chunks
+  - Each thread gets one chunk
+  - Assignment is fixed at the start
+- **Best for**:
+  - Uniform work distribution
+  - Minimal scheduling overhead
+  - Predictable performance
+
+#### Dynamic Scheduling
+```cpp
+#pragma omp parallel for schedule(dynamic, 32)
+for (size_t i = 0; i < blocks.size(); ++i) {
+    // Process block i
+}
+```
+- **How it works**:
+  - Creates a pool of work chunks (32 blocks/chunk)
+  - Threads grab chunks as they become available
+  - Better load balancing for variable workloads
+- **Best for**:
+  - Variable work per iteration
+  - Systems with load imbalance
+  - Maximizing CPU utilization
+
+### Performance Comparison
+
+#### Throughput (MB/s) - 10M bases, 8 threads
+| Test Case          | Static | Dynamic | Difference |
+|--------------------|--------|---------|------------|
+| 0 errors/block    | 2.52   | 2.56    | +1.6%      |
+| 1 error/block     | 2.32   | 2.36    | +1.7%      |
+| 2 errors/block    | 2.26   | 2.28    | +0.9%      |
+
+#### Thread Scaling (1M bases, 0 errors)
+| Threads | Static (MB/s) | Dynamic (MB/s) | Speedup (vs 1 thread) |
+|---------|---------------|----------------|-----------------------|
+| 1       | 0.64          | 0.67           | 1.00x                 |
+| 2       | 1.26          | 1.27           | 1.90x                 |
+| 4       | 2.43          | 2.43           | 3.63x                 |
+| 8       | 2.49          | 2.52           | 3.76x                 |
+
+### Key Findings
+1. **Minimal Performance Difference**:
+   - Dynamic shows 0.9-1.7% better throughput
+   - Both scale similarly up to 4 threads
+   - Performance plateaus at 8 threads
+
+2. **Recommendation**:
+   - Use `static` scheduling for this workload
+   - Consider `dynamic` if work becomes more variable
+   - Chunk size of 32 provides good balance
+
 ## Implementation Details
 
 The system implements a highly optimized parallel processing pipeline:
