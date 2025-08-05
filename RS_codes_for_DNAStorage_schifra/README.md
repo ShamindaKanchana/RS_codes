@@ -367,19 +367,26 @@ for (size_t i = 0; i < blocks.size(); ++i) {
 ### Performance Comparison
 
 #### Throughput (MB/s) - 10M bases, 8 threads
-| Test Case          | Static | Dynamic | Difference |
-|--------------------|--------|---------|------------|
-| 0 errors/block    | 2.52   | 2.56    | +1.6%      |
-| 1 error/block     | 2.32   | 2.36    | +1.7%      |
-| 2 errors/block    | 2.26   | 2.28    | +0.9%      |
+| Test Case          | Ubuntu (4C/4T) | Windows (8C/8T) | Performance Gain |
+|--------------------|----------------|-----------------|------------------|
+| 0 errors/block    | 2.52           | 9.53            | +278%            |
+| 1 error/block     | 2.32           | 8.91            | +284%            |
+| 2 errors/block    | 2.26           | 8.75            | +287%            |
 
-#### Thread Scaling (1M bases, 0 errors)
-| Threads | Static (MB/s) | Dynamic (MB/s) | Speedup (vs 1 thread) |
-|---------|---------------|----------------|-----------------------|
-| 1       | 0.64          | 0.67           | 1.00x                 |
-| 2       | 1.26          | 1.27           | 1.90x                 |
-| 4       | 2.43          | 2.43           | 3.63x                 |
-| 8       | 2.49          | 2.52           | 3.76x                 |
+#### Thread Scaling (1M bases, 0 errors) - Ubuntu (4C/4T)
+| Threads | Static (MB/s) | Speedup (vs 1 thread) |
+|---------|---------------|-----------------------|
+| 1       | 0.64          | 1.00x                 |
+| 2       | 1.26          | 1.97x                 |
+| 4       | 2.43          | 3.80x                 |
+
+#### Thread Scaling (1M bases, 0 errors) - Windows (8C/8T)
+| Threads | Static (MB/s) | Speedup (vs 1 thread) |
+|---------|---------------|-----------------------|
+| 1       | 1.52          | 1.00x                 |
+| 2       | 2.98          | 1.96x                 |
+| 4       | 5.82          | 3.83x                 |
+| 8       | 9.12          | 6.00x                 |
 
 ### Key Findings
 1. **Minimal Performance Difference**:
