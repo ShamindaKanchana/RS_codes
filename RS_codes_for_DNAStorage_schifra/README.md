@@ -436,10 +436,10 @@ The system implements a highly optimized parallel processing pipeline:
 
 #### 1. Processing Time Comparison
 
-![Ubuntu Processing Time](examples/dna_storage/ubuntu_processing_time_vs_size.png)
+![Ubuntu Processing Time](./examples/dna_storage/ubuntu_processing_time_vs_size.png)
 *Figure 1: Ubuntu (4 cores/4 threads) - Processing time increases linearly with sequence size*
 
-![Windows Processing Time](examples/dna_storage/windows_processing_time_vs_size.png)
+![Windows Processing Time](./examples/dna_storage/windows_processing_time_vs_size.png)
 *Figure 2: Windows (8 cores/8 threads) - Shows similar scaling with higher absolute performance*
 
 **Key Observations**:
@@ -449,10 +449,10 @@ The system implements a highly optimized parallel processing pipeline:
 
 #### 2. Throughput Analysis
 
-![Ubuntu Throughput](examples/dna_storage/ubuntu_throughput_vs_size.png)
+![Ubuntu Throughput](./examples/dna_storage/ubuntu_throughput_vs_size.png)
 *Figure 3: Ubuntu throughput across different error scenarios*
 
-![Windows Throughput](examples/dna_storage/windows_throughput_vs_size.png)
+![Windows Throughput](./examples/dna_storage/windows_throughput_vs_size.png)
 *Figure 4: Windows throughput shows higher peak performance*
 
 **Key Findings**:
@@ -462,10 +462,10 @@ The system implements a highly optimized parallel processing pipeline:
 
 #### 3. Parallel Scaling
 
-![Ubuntu Scaling](examples/dna_storage/ubuntu_parallel_scaling.png)
+![Ubuntu Scaling](./examples/dna_storage/ubuntu_parallel_scaling.png)
 *Figure 5: Ubuntu (4 threads) shows good scaling up to 4 cores*
 
-![Windows Scaling](examples/dna_storage/windows_parallel_scaling.png)
+![Windows Scaling](./examples/dna_storage/windows_parallel_scaling.png)
 *Figure 6: Windows (8 threads) demonstrates strong scaling up to 8 cores*
 
 **Scaling Analysis**:
