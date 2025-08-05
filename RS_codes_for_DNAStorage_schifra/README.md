@@ -434,6 +434,31 @@ The system implements a highly optimized parallel processing pipeline:
 
 ### Performance Analysis
 
+#### Note on Data Size Representation
+In the benchmark results, sequence sizes are converted from bases to megabytes (MB) using the following calculation:
+
+```python
+# Conversion from bases to MB
+sequence_sizes_mb = [x / (1024*1024) for x in sequence_sizes]  # 1 MB = 1,048,576 bytes
+```
+
+**Why this conversion?**
+- The implementation currently stores each DNA base as 1 byte (8 bits) for simplicity
+- This provides a conservative estimate of storage requirements
+- In practice, DNA bases (A, C, G, T) could be stored more efficiently using 2 bits per base
+- The conversion to MB is for visualization purposes only and represents the raw byte count
+
+For reference, here are the actual sequence sizes in both representations:
+
+| Bases  | MB (1 byte/base) | MB (theoretical 2 bits/base) |
+|--------|------------------|-----------------------------|
+| 10,000 | 0.00954 MB       | 0.00238 MB                  |
+| 100,000| 0.0954 MB        | 0.0238 MB                   |
+| 1,000,000| 0.954 MB        | 0.238 MB                    |
+| 10,000,000| 9.54 MB        | 2.38 MB                     |
+
+### Performance Analysis
+
 #### 1. Processing Time Comparison
 
 ![Ubuntu Processing Time](/RS_codes_for_DNAStorage_schifra/examples/dna_storage/ubuntu_processing_time_vs_size.png)
