@@ -416,7 +416,74 @@ The system implements a highly optimized parallel processing pipeline:
    - Optimized for the RS(15,11) code's error correction capability
    - Validation against original sequences
 
-## Performance Optimization
+## Benchmark Results
+
+### System Configurations
+
+#### Ubuntu System (Reference)
+- **CPU**: 4 Cores / 4 Threads
+- **OS**: Ubuntu 20.04 LTS
+- **Compiler**: g++ 9.4.0
+- **OpenMP**: 4.5
+
+#### Windows System
+- **CPU**: 8 Cores / 8 Threads
+- **OS**: Windows 10
+- **Compiler**: MSVC 2019
+- **OpenMP**: 2015.11
+
+### Performance Analysis
+
+#### 1. Processing Time Comparison
+
+![Ubuntu Processing Time](examples/dna_storage/ubuntu_processing_time_vs_size.png)
+*Figure 1: Ubuntu (4 cores/4 threads) - Processing time increases linearly with sequence size*
+
+![Windows Processing Time](examples/dna_storage/windows_processing_time_vs_size.png)
+*Figure 2: Windows (8 cores/8 threads) - Shows similar scaling with higher absolute performance*
+
+**Key Observations**:
+- Windows system shows approximately 2-3x better absolute performance due to higher core count
+- Both systems maintain consistent scaling with increasing sequence sizes
+- Error correction overhead is more pronounced on larger sequences
+
+#### 2. Throughput Analysis
+
+![Ubuntu Throughput](examples/dna_storage/ubuntu_throughput_vs_size.png)
+*Figure 3: Ubuntu throughput across different error scenarios*
+
+![Windows Throughput](examples/dna_storage/windows_throughput_vs_size.png)
+*Figure 4: Windows throughput shows higher peak performance*
+
+**Key Findings**:
+- Windows achieves up to 9.53 MB/s peak throughput (0 errors, 100KB sequence)
+- Throughput decreases with more errors due to additional computation
+- Both systems show similar throughput degradation patterns with increasing error rates
+
+#### 3. Parallel Scaling
+
+![Ubuntu Scaling](examples/dna_storage/ubuntu_parallel_scaling.png)
+*Figure 5: Ubuntu (4 threads) shows good scaling up to 4 cores*
+
+![Windows Scaling](examples/dna_storage/windows_parallel_scaling.png)
+*Figure 6: Windows (8 threads) demonstrates strong scaling up to 8 cores*
+
+**Scaling Analysis**:
+- Ubuntu achieves ~3.8x speedup on 4 cores (near-linear scaling)
+- Windows achieves ~6x speedup on 8 cores
+- Diminishing returns observed with higher thread counts due to:
+  - Memory bandwidth limitations
+  - Thread management overhead
+  - Resource contention
+
+#### 4. Error Correction Efficiency
+
+Both systems demonstrate identical error correction rates as they implement the same RS(15,11) code:
+- 100% success rate for 0 errors (as expected)
+- ~73% success rate for 1 error per block
+- ~70% success rate for 2 errors per block
+
+### Performance Optimization Recommendations
 
 1. **Memory Efficiency**:
    - Pre-allocated output buffers
