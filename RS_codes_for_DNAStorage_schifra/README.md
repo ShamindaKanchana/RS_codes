@@ -11,6 +11,90 @@ This project implements a highly optimized, parallelized Reed-Solomon (15,11) er
 - **Comprehensive Error Analysis**: Tracks introduced and corrected errors with detailed statistics
 - **Optimized Memory Access**: Implements cache-friendly data structures to minimize false sharing
 
+## Getting Started
+
+### Prerequisites
+- C++17 compatible compiler (GCC 9+ or MSVC 2019+)
+- OpenMP support
+- CMake 3.10+ (for building from source)
+- Python 3.6+ (for running benchmarks and visualizations)
+
+### Quick Start (Windows)
+
+```bash
+# Navigate to the examples directory
+cd /c/Users/msk60/Documents/RS_codes/RS_codes_for_DNAStorage_schifra/examples/dna_storage
+
+# Compile the test program
+g++ -std=c++17 -I ../../include test_dna_storage.cpp -o dna_test
+
+# Run the test
+./dna_test
+
+# For optimized build with OpenMP
+g++ -O3 -fopenmp -std=c++17 -I ../../include test_dna_storage.cpp -o dna_test_optimized
+./dna_test_optimized
+```
+
+### Quick Start (Ubuntu/Linux)
+
+```bash
+# Install dependencies
+sudo apt update
+sudo apt install g++ libomp-dev
+
+# Compile and run
+g++ -O3 -fopenmp -std=c++17 -I ../../include test_dna_storage.cpp -o dna_test
+./dna_test
+```
+
+### Expected Output
+```
+=== Testing Schifra DNA Storage ===
+
+Original DNA sequence: ACGTACGTACG
+Encoded DNA (with ECC): ACGTACGTACGCGCC
+ECC symbols: [9, 2, 5, 9]
+Decoded DNA: ACGTACGTACG
+
+✅ Test 1/2 PASSED: Error-free decoding successful
+
+Corrupted DNA: AAGTAGGTACGCGCC (introduced 2 errors)
+Corrected DNA: ACGTACGTACG
+
+✅ Test 2/2 PASSED: Error correction successful
+```
+
+## Error Correction Capabilities
+
+Our implementation uses Reed-Solomon (15,11) code which can reliably correct up to 2 symbol errors per 15-symbol block. This is mathematically guaranteed by the code's design, where:
+- Each block contains 11 data symbols and 4 parity symbols
+- The code has a minimum Hamming distance of 5, allowing it to detect up to 4 errors or correct up to 2 errors per block
+
+### Verification Test Results
+
+```
+=== Testing Schifra DNA Storage ===
+
+Original DNA sequence: ACGTACGTACG
+Encoded DNA (with ECC): ACGTACGTACGCGCC
+ECC symbols: [9, 2, 5, 9]
+Decoded DNA: ACGTACGTACG
+
+✅ Test 1/2 PASSED: Error-free decoding successful
+
+Corrupted DNA: AAGTAGGTACGCGCC (introduced 2 errors)
+Corrected DNA: ACGTACGTACG
+
+✅ Test 2/2 PASSED: Error correction successful
+```
+
+### Key Properties
+- **Deterministic Correction**: Any combination of up to 2 errors in a 15-symbol block will be perfectly corrected
+- **Block Independence**: Each block's error correction is independent, ensuring consistent performance across parallel processing
+- **Performance**: The implementation maintains high throughput even with maximum error correction load
+- **Reliability**: 100% correction rate for up to 2 errors per block, guaranteed by the RS(15,11) code's mathematical properties
+
 ## Performance Benchmarks
 
 ### System Configurations
@@ -417,6 +501,80 @@ The system implements a highly optimized parallel processing pipeline:
    - Thread-safe random error generation
    - Configurable error rates (0-2 errors per block)
    - Detailed error tracking and statistics
+
+## Compilation and Execution
+
+### Windows (Tested on Windows 10/11 with MSYS2 UCRT64)
+
+1. **Prerequisites**:
+   - MSYS2 with UCRT64 environment
+   - GCC 15.1.0 or later
+   - OpenMP support enabled
+
+2. **Compilation**:
+   ```bash
+   # Navigate to the examples directory
+   cd /c/Users/msk60/Documents/RS_codes/RS_codes_for_DNAStorage_schifra/examples/dna_storage
+   
+   # Compile the test program
+   g++ -std=c++17 -I ../../include test_dna_storage.cpp -o dna_test
+   
+   # For optimized build with OpenMP
+   g++ -O3 -fopenmp -std=c++17 -I ../../include test_dna_storage.cpp -o dna_test_optimized
+   ```
+
+3. **Running the Tests**:
+   ```bash
+   # Run the basic test
+   ./dna_test
+   
+   # Run the optimized version
+   ./dna_test_optimized
+   ```
+
+### Ubuntu (Tested on 20.04/22.04 LTS)
+
+1. **Prerequisites**:
+   ```bash
+   sudo apt update
+   sudo apt install g++ libomp-dev
+   ```
+
+2. **Compilation**:
+   ```bash
+   # Navigate to the examples directory
+   cd /path/to/RS_codes_for_DNAStorage_schifra/examples/dna_storage
+   
+   # Compile with optimizations
+   g++ -O3 -fopenmp -std=c++17 -I ../../include test_dna_storage.cpp -o dna_test
+   ```
+
+3. **Running the Tests**:
+   ```bash
+   ./dna_test
+   ```
+
+### Expected Output (Windows UCRT64):
+```
+=== Testing Schifra DNA Storage ===
+
+Original DNA sequence: ACGTACGTACG
+Encoded DNA (with ECC): ACGTACGTACGCGCC
+ECC symbols: [9, 2, 5, 9]
+Decoded DNA: ACGTACGTACG
+
+✅ Test 1/2 PASSED: Error-free decoding successful
+
+Corrupted DNA: AAGTAGGTACGCGCC (introduced 2 errors)
+Corrected DNA: ACGTACGTACG
+
+✅ Test 2/2 PASSED: Error correction successful
+```
+
+### Performance Notes:
+- The Windows version shows ~3x better performance due to higher core count (8C/8T vs 4C/8T)
+- Both implementations maintain 100% error correction for up to 2 errors per block
+- Performance scales nearly linearly with core count up to physical core limit
 
 4. **Decoding Pipeline**:
    - Parallel error detection and correction
