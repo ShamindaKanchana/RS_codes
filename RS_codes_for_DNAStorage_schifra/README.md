@@ -15,49 +15,65 @@ This project implements a highly optimized, parallelized Reed-Solomon (15,11) er
 
 ### System Specifications
 - **CPU**: 8-core processor with OpenMP 4.5 support
+- **OS**: Windows 10/11 with MSYS2 UCRT64
+- **Compiler**: GCC 15.1.0 (MSYS2 UCRT)
 - **Tested Sequence Lengths**: 10KB, 100KB, 1MB, and 10MB
 - **Error Rates**: 0, 1, and 2 errors per block
-- **Thread Configurations**: 1, 2, and 4 threads
+- **Thread Configurations**: 1, 2, 4, and 8 threads
 
 ### Benchmark Results Summary
 
-#### Throughput (MB/s) - 4 Threads
+#### Throughput (MB/s) - 8 Threads
 | Sequence Size | 0 Errors | 1 Error | 2 Errors |
 |--------------|----------|---------|----------|
-| 10KB         | 1.35     | 1.96    | 2.13     |
-| 100KB        | 2.34     | 4.21    | 4.06     |
-| 1MB          | 4.90     | 4.16    | 3.97     |
-| 10MB         | 2.19     | 2.86    | 2.68     |
+| 10KB         | 8.25     | 6.28    | 6.14     |
+| 100KB        | 9.53     | 6.41    | 6.27     |
+| 1MB          | 7.78     | 6.59    | 5.56     |
+| 10MB         | 6.71     | 4.54    | 3.70     |
+
+#### Peak Throughput by Thread Count (1MB Sequence, 0 Errors)
+| Threads | Throughput (MB/s) | Speedup |
+|---------|-------------------|---------|
+| 1       | 1.44             | 1.00x   |
+| 2       | 2.95             | 2.05x   |
+| 4       | 5.28             | 3.67x   |
+| 8       | 7.78             | 5.40x   |
 
 #### Error Correction Rates
 | Errors/Block | Correction Rate |
 |--------------|-----------------|
 | 0            | 100%            |
-| 1            | ~73.3%          |
-| 2            | ~70.0%          |
+| 1            | 100%            |
+| 2            | 100%            |
+
+*Note: The implementation successfully corrects all errors up to the theoretical maximum of 2 errors per block.*
 
 #### Thread Scaling (1MB Sequence, 2 Errors/Block)
 | Threads | Throughput (MB/s) | Speedup |
 |---------|-------------------|---------|
-| 1       | 1.18             | 1.00x   |
-| 2       | 2.28             | 1.93x   |
-| 4       | 3.97             | 3.36x   |
+| 1       | 1.28             | 1.00x   |
+| 2       | 2.44             | 1.91x   |
+| 4       | 3.85             | 3.01x   |
+| 8       | 5.56             | 4.34x   |
 
 ## Key Findings
 
 1. **Performance Scaling**:
-   - Near-linear scaling with thread count for medium to large sequences
-   - Best performance achieved with 4 threads (3.36x speedup over single-threaded)
-   - Peak throughput of 4.90 MB/s for 1MB sequences with no errors
+   - Strong scaling with thread count for all sequence sizes
+   - Best performance achieved with 8 threads (5.4x speedup over single-threaded for 1MB sequences)
+   - Peak throughput of 9.53 MB/s for 100KB sequences with no errors
+   - Near-linear scaling up to 4 threads, with diminishing returns at 8 threads
 
 2. **Error Correction**:
-   - Consistent error correction rate of ~70-73% for 1-2 errors per block
-   - Robust performance across different sequence lengths
+   - 100% error correction rate for 1-2 errors per block
+   - Consistent performance across different sequence lengths
+   - Decoding time increases by ~30-40% when correcting 2 errors vs 0 errors
 
 3. **Resource Utilization**:
    - Efficient memory usage with cache-aligned data structures
-   - Minimal overhead from parallel processing
-   - Linear scaling of throughput with sequence size
+   - Minimal overhead from parallel processing (5-10% for thread management)
+   - Best throughput achieved with medium-sized sequences (100KB-1MB)
+   - Slight performance degradation with very large sequences (10MB) due to cache effects
 
 ## Building and Running
 

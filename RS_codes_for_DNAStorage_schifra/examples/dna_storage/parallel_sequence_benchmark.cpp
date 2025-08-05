@@ -20,7 +20,11 @@
 #include <omp.h>
 #include <atomic>
 #include <thread>
-#include <unistd.h>
+#ifdef _WIN32
+    #include <windows.h>
+#else
+    #include <unistd.h>
+#endif
 #include <fstream>
 #include <sstream>
 #include "../../include/schifra/dna_storage.hpp"
@@ -336,7 +340,13 @@ int main(int argc, char* argv[]) {
     try {
         // Print system and OpenMP information
         std::cout << "=== System Information ===" << std::endl;
-        std::cout << "CPU Cores: " << sysconf(_SC_NPROCESSORS_ONLN) << std::endl;
+        #ifdef _WIN32
+            SYSTEM_INFO sysinfo;
+            GetSystemInfo(&sysinfo);
+            std::cout << "CPU Cores: " << sysinfo.dwNumberOfProcessors << std::endl;
+        #else
+            std::cout << "CPU Cores: " << sysconf(_SC_NPROCESSORS_ONLN) << std::endl;
+        #endif
         #ifdef _OPENMP
             std::cout << "OpenMP Version: " << _OPENMP / 100 << "." << _OPENMP % 100 << std::endl;
         #else
