@@ -1,0 +1,639 @@
+msk60@node1 UCRT64 /c/Users/msk60/Documents/RS_codes/RS_codes_for_DNAStorage_schifra/examples/dna_storage
+$ ./parallel_benchmark
+=== System Information ===
+CPU Cores: 8
+OpenMP Version: 2015.11
+=== DNA Storage with Reed-Solomon (15,11) Benchmark ===
+
+=== Testing with 10000 bases (9.76562 KB) ===
+Generating random DNA sequence...
+
+=== Testing with 0 errors per block ===
+Benchmark Results:
+-----------------
+Sequence length:           10000 bases (9.76562 KB)
+Threads used:              8
+Total blocks processed:    910
+Total encoding time:       1.45 ms
+Total decoding time:       3.72 ms
+Total processing time:     1.16 ms
+Avg block processing time: 0.0013 ms/block
+Throughput:                8.25 MB/s
+
+=== Testing with 1 error per block ===
+Benchmark Results:
+-----------------
+Sequence length:           10000 bases (9.77 KB)
+Threads used:              8
+Total blocks processed:    910
+Total encoding time:       1.71 ms
+Total decoding time:       5.94 ms
+Total processing time:     1.52 ms
+Avg block processing time: 0.0017 ms/block
+Throughput:                6.28 MB/s
+
+=== Testing with 2 errors per block ===
+Benchmark Results:
+-----------------
+Sequence length:           10000 bases (9.77 KB)
+Threads used:              8
+Total blocks processed:    910
+Total encoding time:       1.68 ms
+Total decoding time:       6.57 ms
+Total processing time:     1.55 ms
+Avg block processing time: 0.0017 ms/block
+Throughput:                6.14 MB/s
+
+=== Testing with 100000 bases (97.66 KB) ===
+Generating random DNA sequence...
+
+=== Testing with 0 errors per block ===
+Benchmark Results:
+-----------------
+Sequence length:           100000 bases (97.66 KB)
+Threads used:              8
+Total blocks processed:    9091
+Total encoding time:       14.34 ms
+Total decoding time:       38.76 ms
+Total processing time:     10.00 ms
+Avg block processing time: 0.0011 ms/block
+Throughput:                9.53 MB/s
+
+=== Scaling Benchmark ===
+Sequence length: 100000 bases
+Errors per block: 0
+Available threads: 8
+
+=== 1 thread ===
+Benchmark Results:
+-----------------
+Sequence length:           100000 bases (97.66 KB)
+Threads used:              1
+Total blocks processed:    9091
+Total encoding time:       12.71 ms
+Total decoding time:       34.26 ms
+Total processing time:     64.81 ms
+Avg block processing time: 0.0071 ms/block
+Throughput:                1.47 MB/s
+
+=== 2 threads ===
+Benchmark Results:
+-----------------
+Sequence length:           100000 bases (97.66 KB)
+Threads used:              2
+Total blocks processed:    9091
+Total encoding time:       12.79 ms
+Total decoding time:       33.55 ms
+Total processing time:     32.52 ms
+Avg block processing time: 0.0036 ms/block
+Throughput:                2.93 MB/s
+
+=== 4 threads ===
+Benchmark Results:
+-----------------
+Sequence length:           100000 bases (97.66 KB)
+Threads used:              4
+Total blocks processed:    9091
+Total encoding time:       13.86 ms
+Total decoding time:       37.34 ms
+Total processing time:     18.08 ms
+Avg block processing time: 0.0020 ms/block
+Throughput:                5.28 MB/s
+
+=== 8 threads ===
+Benchmark Results:
+-----------------
+Sequence length:           100000 bases (97.66 KB)
+Threads used:              8
+Total blocks processed:    9091
+Total encoding time:       20.09 ms
+Total decoding time:       52.63 ms
+Total processing time:     12.73 ms
+Avg block processing time: 0.0014 ms/block
+Throughput:                7.49 MB/s
+
+=== Testing with 1 error per block ===
+Benchmark Results:
+-----------------
+Sequence length:           100000 bases (97.66 KB)
+Threads used:              8
+Total blocks processed:    9091
+Total encoding time:       20.81 ms
+Total decoding time:       65.43 ms
+Total processing time:     14.88 ms
+Avg block processing time: 0.0016 ms/block
+Throughput:                6.41 MB/s
+
+=== Scaling Benchmark ===
+Sequence length: 100000 bases
+Errors per block: 1
+Available threads: 8
+
+=== 1 thread ===
+Benchmark Results:
+-----------------
+Sequence length:           100000 bases (97.66 KB)
+Threads used:              1
+Total blocks processed:    9091
+Total encoding time:       12.88 ms
+Total decoding time:       40.16 ms
+Total processing time:     71.50 ms
+Avg block processing time: 0.0079 ms/block
+Throughput:                1.33 MB/s
+
+=== 2 threads ===
+Benchmark Results:
+-----------------
+Sequence length:           100000 bases (97.66 KB)
+Threads used:              2
+Total blocks processed:    9091
+Total encoding time:       13.08 ms
+Total decoding time:       41.67 ms
+Total processing time:     37.39 ms
+Avg block processing time: 0.0041 ms/block
+Throughput:                2.55 MB/s
+
+=== 4 threads ===
+Benchmark Results:
+-----------------
+Sequence length:           100000 bases (97.66 KB)
+Threads used:              4
+Total blocks processed:    9091
+Total encoding time:       13.88 ms
+Total decoding time:       45.93 ms
+Total processing time:     20.86 ms
+Avg block processing time: 0.0023 ms/block
+Throughput:                4.57 MB/s
+
+=== 8 threads ===
+Benchmark Results:
+-----------------
+Sequence length:           100000 bases (97.66 KB)
+Threads used:              8
+Total blocks processed:    9091
+Total encoding time:       20.90 ms
+Total decoding time:       64.23 ms
+Total processing time:     14.91 ms
+Avg block processing time: 0.0016 ms/block
+Throughput:                6.40 MB/s
+
+=== Testing with 2 errors per block ===
+Benchmark Results:
+-----------------
+Sequence length:           100000 bases (97.66 KB)
+Threads used:              8
+Total blocks processed:    9091
+Total encoding time:       19.77 ms
+Total decoding time:       67.28 ms
+Total processing time:     15.21 ms
+Avg block processing time: 0.0017 ms/block
+Throughput:                6.27 MB/s
+
+=== Scaling Benchmark ===
+Sequence length: 100000 bases
+Errors per block: 2
+Available threads: 8
+
+=== 1 thread ===
+Benchmark Results:
+-----------------
+Sequence length:           100000 bases (97.66 KB)
+Threads used:              1
+Total blocks processed:    9091
+Total encoding time:       12.94 ms
+Total decoding time:       43.20 ms
+Total processing time:     74.71 ms
+Avg block processing time: 0.0082 ms/block
+Throughput:                1.28 MB/s
+
+=== 2 threads ===
+Benchmark Results:
+-----------------
+Sequence length:           100000 bases (97.66 KB)
+Threads used:              2
+Total blocks processed:    9091
+Total encoding time:       13.05 ms
+Total decoding time:       45.55 ms
+Total processing time:     39.25 ms
+Avg block processing time: 0.0043 ms/block
+Throughput:                2.43 MB/s
+
+=== 4 threads ===
+Benchmark Results:
+-----------------
+Sequence length:           100000 bases (97.66 KB)
+Threads used:              4
+Total blocks processed:    9091
+Total encoding time:       13.94 ms
+Total decoding time:       50.22 ms
+Total processing time:     21.77 ms
+Avg block processing time: 0.0024 ms/block
+Throughput:                4.38 MB/s
+
+=== 8 threads ===
+Benchmark Results:
+-----------------
+Sequence length:           100000 bases (97.66 KB)
+Threads used:              8
+Total blocks processed:    9091
+Total encoding time:       20.87 ms
+Total decoding time:       72.65 ms
+Total processing time:     16.09 ms
+Avg block processing time: 0.0018 ms/block
+Throughput:                5.93 MB/s
+
+=== Testing with 1000000 bases (976.56 KB) ===
+Generating random DNA sequence...
+
+=== Testing with 0 errors per block ===
+Benchmark Results:
+-----------------
+Sequence length:           1000000 bases (976.56 KB)
+Threads used:              8
+Total blocks processed:    90910
+Total encoding time:       193.57 ms
+Total decoding time:       511.35 ms
+Total processing time:     122.65 ms
+Avg block processing time: 0.0013 ms/block
+Throughput:                7.78 MB/s
+
+=== Scaling Benchmark ===
+Sequence length: 1000000 bases
+Errors per block: 0
+Available threads: 8
+
+=== 1 thread ===
+Benchmark Results:
+-----------------
+Sequence length:           1000000 bases (976.56 KB)
+Threads used:              1
+Total blocks processed:    90910
+Total encoding time:       127.36 ms
+Total decoding time:       339.15 ms
+Total processing time:     664.19 ms
+Avg block processing time: 0.0073 ms/block
+Throughput:                1.44 MB/s
+
+=== 2 threads ===
+Benchmark Results:
+-----------------
+Sequence length:           1000000 bases (976.56 KB)
+Threads used:              2
+Total blocks processed:    90910
+Total encoding time:       128.86 ms
+Total decoding time:       332.50 ms
+Total processing time:     323.02 ms
+Avg block processing time: 0.0036 ms/block
+Throughput:                2.95 MB/s
+
+=== 4 threads ===
+Benchmark Results:
+-----------------
+Sequence length:           1000000 bases (976.56 KB)
+Threads used:              4
+Total blocks processed:    90910
+Total encoding time:       139.85 ms
+Total decoding time:       381.39 ms
+Total processing time:     182.60 ms
+Avg block processing time: 0.0020 ms/block
+Throughput:                5.22 MB/s
+
+=== 8 threads ===
+Benchmark Results:
+-----------------
+Sequence length:           1000000 bases (976.56 KB)
+Threads used:              8
+Total blocks processed:    90910
+Total encoding time:       198.88 ms
+Total decoding time:       538.72 ms
+Total processing time:     126.68 ms
+Avg block processing time: 0.0014 ms/block
+Throughput:                7.53 MB/s
+
+=== Testing with 1 error per block ===
+Benchmark Results:
+-----------------
+Sequence length:           1000000 bases (976.56 KB)
+Threads used:              8
+Total blocks processed:    90910
+Total encoding time:       212.31 ms
+Total decoding time:       648.75 ms
+Total processing time:     144.61 ms
+Avg block processing time: 0.0016 ms/block
+Throughput:                6.59 MB/s
+
+=== Scaling Benchmark ===
+Sequence length: 1000000 bases
+Errors per block: 1
+Available threads: 8
+
+=== 1 thread ===
+Benchmark Results:
+-----------------
+Sequence length:           1000000 bases (976.56 KB)
+Threads used:              1
+Total blocks processed:    90910
+Total encoding time:       126.59 ms
+Total decoding time:       399.63 ms
+Total processing time:     708.90 ms
+Avg block processing time: 0.0078 ms/block
+Throughput:                1.35 MB/s
+
+=== 2 threads ===
+Benchmark Results:
+-----------------
+Sequence length:           1000000 bases (976.56 KB)
+Threads used:              2
+Total blocks processed:    90910
+Total encoding time:       178.54 ms
+Total decoding time:       472.09 ms
+Total processing time:     428.76 ms
+Avg block processing time: 0.0047 ms/block
+Throughput:                2.22 MB/s
+
+=== 4 threads ===
+Benchmark Results:
+-----------------
+Sequence length:           1000000 bases (976.56 KB)
+Threads used:              4
+Total blocks processed:    90910
+Total encoding time:       241.52 ms
+Total decoding time:       605.13 ms
+Total processing time:     274.21 ms
+Avg block processing time: 0.0030 ms/block
+Throughput:                3.48 MB/s
+
+=== 8 threads ===
+Benchmark Results:
+-----------------
+Sequence length:           1000000 bases (976.56 KB)
+Threads used:              8
+Total blocks processed:    90910
+Total encoding time:       265.06 ms
+Total decoding time:       751.17 ms
+Total processing time:     166.03 ms
+Avg block processing time: 0.0018 ms/block
+Throughput:                5.74 MB/s
+
+=== Testing with 2 errors per block ===
+Benchmark Results:
+-----------------
+Sequence length:           1000000 bases (976.56 KB)
+Threads used:              8
+Total blocks processed:    90910
+Total encoding time:       262.65 ms
+Total decoding time:       797.34 ms
+Total processing time:     171.40 ms
+Avg block processing time: 0.0019 ms/block
+Throughput:                5.56 MB/s
+
+=== Scaling Benchmark ===
+Sequence length: 1000000 bases
+Errors per block: 2
+Available threads: 8
+
+=== 1 thread ===
+Benchmark Results:
+-----------------
+Sequence length:           1000000 bases (976.56 KB)
+Threads used:              1
+Total blocks processed:    90910
+Total encoding time:       126.75 ms
+Total decoding time:       434.83 ms
+Total processing time:     746.65 ms
+Avg block processing time: 0.0082 ms/block
+Throughput:                1.28 MB/s
+
+=== 2 threads ===
+Benchmark Results:
+-----------------
+Sequence length:           1000000 bases (976.56 KB)
+Threads used:              2
+Total blocks processed:    90910
+Total encoding time:       130.79 ms
+Total decoding time:       454.90 ms
+Total processing time:     390.63 ms
+Avg block processing time: 0.0043 ms/block
+Throughput:                2.44 MB/s
+
+=== 4 threads ===
+Benchmark Results:
+-----------------
+Sequence length:           1000000 bases (976.56 KB)
+Threads used:              4
+Total blocks processed:    90910
+Total encoding time:       179.18 ms
+Total decoding time:       573.76 ms
+Total processing time:     247.41 ms
+Avg block processing time: 0.0027 ms/block
+Throughput:                3.85 MB/s
+
+=== 8 threads ===
+Benchmark Results:
+-----------------
+Sequence length:           1000000 bases (976.56 KB)
+Threads used:              8
+Total blocks processed:    90910
+Total encoding time:       248.72 ms
+Total decoding time:       771.34 ms
+Total processing time:     165.64 ms
+Avg block processing time: 0.0018 ms/block
+Throughput:                5.76 MB/s
+
+=== Testing with 10000000 bases (9765.62 KB) ===
+Generating random DNA sequence...
+
+=== Testing with 0 errors per block ===
+Benchmark Results:
+-----------------
+Sequence length:           10000000 bases (9765.62 KB)
+Threads used:              8
+Total blocks processed:    909091
+Total encoding time:       2425.96 ms
+Total decoding time:       6059.15 ms
+Total processing time:     1422.12 ms
+Avg block processing time: 0.0016 ms/block
+Throughput:                6.71 MB/s
+
+=== Scaling Benchmark ===
+Sequence length: 10000000 bases
+Errors per block: 0
+Available threads: 8
+
+=== 1 thread ===
+Benchmark Results:
+-----------------
+Sequence length:           10000000 bases (9765.62 KB)
+Threads used:              1
+Total blocks processed:    909091
+Total encoding time:       2222.02 ms
+Total decoding time:       4362.97 ms
+Total processing time:     8589.79 ms
+Avg block processing time: 0.0094 ms/block
+Throughput:                1.11 MB/s
+
+=== 2 threads ===
+Benchmark Results:
+-----------------
+Sequence length:           10000000 bases (9765.62 KB)
+Threads used:              2
+Total blocks processed:    909091
+Total encoding time:       1712.62 ms
+Total decoding time:       3758.86 ms
+Total processing time:     3686.41 ms
+Avg block processing time: 0.0041 ms/block
+Throughput:                2.59 MB/s
+
+=== 4 threads ===
+Benchmark Results:
+-----------------
+Sequence length:           10000000 bases (9765.62 KB)
+Threads used:              4
+Total blocks processed:    909091
+Total encoding time:       2462.07 ms
+Total decoding time:       5364.97 ms
+Total processing time:     2554.30 ms
+Avg block processing time: 0.0028 ms/block
+Throughput:                3.73 MB/s
+
+=== 8 threads ===
+Benchmark Results:
+-----------------
+Sequence length:           10000000 bases (9765.62 KB)
+Threads used:              8
+Total blocks processed:    909091
+Total encoding time:       3183.52 ms
+Total decoding time:       6987.28 ms
+Total processing time:     1659.67 ms
+Avg block processing time: 0.0018 ms/block
+Throughput:                5.75 MB/s
+
+=== Testing with 1 error per block ===
+Benchmark Results:
+-----------------
+Sequence length:           10000000 bases (9765.62 KB)
+Threads used:              8
+Total blocks processed:    909091
+Total encoding time:       3590.74 ms
+Total decoding time:       9523.55 ms
+Total processing time:     2102.32 ms
+Avg block processing time: 0.0023 ms/block
+Throughput:                4.54 MB/s
+
+=== Scaling Benchmark ===
+Sequence length: 10000000 bases
+Errors per block: 1
+Available threads: 8
+
+=== 1 thread ===
+Benchmark Results:
+-----------------
+Sequence length:           10000000 bases (9765.62 KB)
+Threads used:              1
+Total blocks processed:    909091
+Total encoding time:       2215.55 ms
+Total decoding time:       5041.36 ms
+Total processing time:     9318.24 ms
+Avg block processing time: 0.0103 ms/block
+Throughput:                1.02 MB/s
+
+=== 2 threads ===
+Benchmark Results:
+-----------------
+Sequence length:           10000000 bases (9765.62 KB)
+Threads used:              2
+Total blocks processed:    909091
+Total encoding time:       3115.35 ms
+Total decoding time:       6295.10 ms
+Total processing time:     5924.88 ms
+Avg block processing time: 0.0065 ms/block
+Throughput:                1.61 MB/s
+
+=== 4 threads ===
+Benchmark Results:
+-----------------
+Sequence length:           10000000 bases (9765.62 KB)
+Threads used:              4
+Total blocks processed:    909091
+Total encoding time:       2515.10 ms
+Total decoding time:       6325.21 ms
+Total processing time:     2838.89 ms
+Avg block processing time: 0.0031 ms/block
+Throughput:                3.36 MB/s
+
+=== 8 threads ===
+Benchmark Results:
+-----------------
+Sequence length:           10000000 bases (9765.62 KB)
+Threads used:              8
+Total blocks processed:    909091
+Total encoding time:       4032.72 ms
+Total decoding time:       9887.71 ms
+Total processing time:     2208.47 ms
+Avg block processing time: 0.0024 ms/block
+Throughput:                4.32 MB/s
+
+=== Testing with 2 errors per block ===
+Benchmark Results:
+-----------------
+Sequence length:           10000000 bases (9765.62 KB)
+Threads used:              8
+Total blocks processed:    909091
+Total encoding time:       4572.26 ms
+Total decoding time:       11847.35 ms
+Total processing time:     2579.05 ms
+Avg block processing time: 0.0028 ms/block
+Throughput:                3.70 MB/s
+
+=== Scaling Benchmark ===
+Sequence length: 10000000 bases
+Errors per block: 2
+Available threads: 8
+
+=== 1 thread ===
+Benchmark Results:
+-----------------
+Sequence length:           10000000 bases (9765.62 KB)
+Threads used:              1
+Total blocks processed:    909091
+Total encoding time:       2222.14 ms
+Total decoding time:       5368.38 ms
+Total processing time:     9667.51 ms
+Avg block processing time: 0.0106 ms/block
+Throughput:                0.99 MB/s
+
+=== 2 threads ===
+Benchmark Results:
+-----------------
+Sequence length:           10000000 bases (9765.62 KB)
+Threads used:              2
+Total blocks processed:    909091
+Total encoding time:       3094.28 ms
+Total decoding time:       6638.35 ms
+Total processing time:     6085.23 ms
+Avg block processing time: 0.0067 ms/block
+Throughput:                1.57 MB/s
+
+=== 4 threads ===
+Benchmark Results:
+-----------------
+Sequence length:           10000000 bases (9765.62 KB)
+Threads used:              4
+Total blocks processed:    909091
+Total encoding time:       3837.06 ms
+Total decoding time:       8577.43 ms
+Total processing time:     3822.04 ms
+Avg block processing time: 0.0042 ms/block
+Throughput:                2.50 MB/s
+
+=== 8 threads ===
+Benchmark Results:
+-----------------
+Sequence length:           10000000 bases (9765.62 KB)
+Threads used:              8
+Total blocks processed:    909091
+Total encoding time:       5142.53 ms
+Total decoding time:       12235.99 ms
+Total processing time:     2659.36 ms
+Avg block processing time: 0.0029 ms/block
+Throughput:                3.59 MB/s
