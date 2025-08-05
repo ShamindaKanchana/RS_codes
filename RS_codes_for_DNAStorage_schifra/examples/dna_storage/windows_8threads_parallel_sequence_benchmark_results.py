@@ -101,11 +101,15 @@ def plot_error_correction():
 def plot_scaling():
     plt.figure(figsize=(12, 6))
     
-    df = pd.DataFrame(scaling_data)
+    # Thread scaling data (for 100KB sequence size)
+    threads = [1, 2, 4, 8]  # Windows has 8 threads
+    speedup_0_errors = [1.0, 1.98, 3.85, 6.12]  # Speedup for 0 errors
+    speedup_1_error = [1.0, 1.55, 3.71, 5.92]   # Speedup for 1 error
+    speedup_2_errors = [1.0, 1.57, 3.73, 5.95]  # Speedup for 2 errors
     
-    plt.plot(df['Threads'], df['Speedup (0 errors)'], 'o-', label='0 errors', markersize=8, linewidth=2)
-    plt.plot(df['Threads'], df['Speedup (1 error)'], 's-', label='1 error', markersize=8, linewidth=2)
-    plt.plot(df['Threads'], df['Speedup (2 errors)'], 'd-', label='2 errors', markersize=8, linewidth=2)
+    plt.plot(threads, speedup_0_errors, 'o-', label='0 errors', markersize=8, linewidth=2)
+    plt.plot(threads, speedup_1_error, 's-', label='1 error', markersize=8, linewidth=2)
+    plt.plot(threads, speedup_2_errors, 'd-', label='2 errors', markersize=8, linewidth=2)
     
     # Ideal scaling line (8x speedup)
     plt.axline((1, 1), slope=1, color='r', linestyle='--', label='Ideal Scaling', alpha=0.5)
@@ -113,7 +117,7 @@ def plot_scaling():
     plt.xlabel('Number of Threads')
     plt.ylabel('Speedup (vs 1 Thread)')
     plt.title('Parallel Scaling on Windows (8 Cores/8 Threads)')
-    plt.xticks(df['Threads'])
+    plt.xticks(threads)
     plt.legend()
     plt.grid(True, linestyle='--', alpha=0.7)
     plt.tight_layout()

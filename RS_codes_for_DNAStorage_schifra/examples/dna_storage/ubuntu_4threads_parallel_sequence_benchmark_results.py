@@ -100,25 +100,27 @@ def plot_error_correction():
 def plot_scaling():
     plt.figure(figsize=(12, 6))
     
-    df = pd.DataFrame(scaling_data)
+    # Thread scaling data (for 100KB sequence size)
+    threads = [1, 2, 4]
+    speedup_0_errors = [1.0, 1.99, 3.87]  # Speedup for 0 errors
+    speedup_1_error = [1.0, 1.57, 3.74]   # Speedup for 1 error
+    speedup_2_errors = [1.0, 1.59, 3.77]  # Speedup for 2 errors
     
-    plt.plot(df['Sequence Size (MB)'], df['Speedup (0 errors)'], 'o-', label='0 errors', markersize=8, linewidth=2)
-    plt.plot(df['Sequence Size (MB)'], df['Speedup (1 error)'], 's-', label='1 error', markersize=8, linewidth=2)
-    plt.plot(df['Sequence Size (MB)'], df['Speedup (2 errors)'], 'd-', label='2 errors', markersize=8, linewidth=2)
+    plt.plot(threads, speedup_0_errors, 'o-', label='0 errors', markersize=8, linewidth=2)
+    plt.plot(threads, speedup_1_error, 's-', label='1 error', markersize=8, linewidth=2)
+    plt.plot(threads, speedup_2_errors, 'd-', label='2 errors', markersize=8, linewidth=2)
     
     # Ideal scaling line (4x speedup)
-    plt.axhline(y=4, color='r', linestyle='--', label='Ideal Scaling (4x)', alpha=0.5)
+    plt.axline((1, 1), slope=1, color='r', linestyle='--', label='Ideal Scaling', alpha=0.5)
     
-    plt.xlabel('Sequence Size (MB)')
+    plt.xlabel('Number of Threads')
     plt.ylabel('Speedup (vs 1 Thread)')
-    plt.title('Parallel Scaling (4 Threads vs 1 Thread)')
-    plt.xscale('log')
-    plt.xticks(df['Sequence Size (MB)'], [f"{size:.4f}" if size < 0.1 else f"{size:.2f}" for size in df['Sequence Size (MB)']])
+    plt.title('Parallel Scaling on Ubuntu (4 Cores/4 Threads)')
+    plt.xticks(threads)
     plt.legend()
     plt.grid(True, linestyle='--', alpha=0.7)
-    plt.gca().xaxis.set_major_formatter(ScalarFormatter())
     plt.tight_layout()
-    plt.savefig('parallel_scaling.png', dpi=300, bbox_inches='tight')
+    plt.savefig('ubuntu_parallel_scaling.png', dpi=300, bbox_inches='tight')
     plt.show()
 
 def main():
