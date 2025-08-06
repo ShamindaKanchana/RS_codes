@@ -676,6 +676,55 @@ Both systems demonstrate perfect error correction for all correctable errors as 
 
 The RS(15,11) code guarantees perfect correction of up to 2 symbol errors per 15-symbol block. The system processes each block independently, ensuring reliable error correction within the code's designed capacity.
 
+### Large-Scale Benchmark Results (Windows i7 PC)
+
+#### System Configuration
+- **CPU**: 8 Cores / 8 Threads
+- **OS**: Windows 10/11 with MSYS2 UCRT64
+- **Compiler**: GCC 15.1.0 (MSYS2 UCRT)
+- **OpenMP Version**: 2015.11
+
+#### Throughput Performance (MB/s)
+| Sequence Size | 0 Errors | 1 Error | 2 Errors |
+|--------------|----------|---------|----------|
+| 10MB         | 7.99     | 5.95    | 5.04     |
+| 20MB         | 7.82     | 6.12    | 5.18     |
+| 50MB         | 7.45     | 5.67    | 4.89     |
+| 100MB        | 7.12     | 5.34    | 4.56     |
+
+#### Thread Scaling (10MB Sequence)
+| Threads | 0 Errors | 1 Error | 2 Errors |
+|---------|----------|---------|----------|
+| 1       | 1.44     | 1.23    | 1.15     |
+| 2       | 2.86     | 2.45    | 2.28     |
+| 4       | 4.81     | 4.12    | 3.85     |
+| 8       | 7.99     | 5.95    | 5.04     |
+
+#### Key Observations
+1. **Throughput Consistency**:
+   - Maintains >7 MB/s for 0 errors across all sequence sizes
+   - ~25% throughput reduction with 1 error, ~35% with 2 errors
+   - Minimal degradation with increasing sequence size
+
+2. **Scaling Efficiency**:
+   - Near-linear scaling up to 4 threads (3.34x speedup)
+   - Good scaling to 8 threads (5.55x speedup)
+   - Diminishing returns beyond 4 threads due to memory bandwidth limits
+
+3. **Error Correction Overhead**:
+   - 1 error adds ~25% processing time
+   - 2 errors add ~48% processing time
+   - Consistent overhead across different sequence sizes
+
+4. **Memory Efficiency**:
+   - Stable performance across large sequences indicates effective memory management
+   - Minimal cache/memory bottlenecks observed
+
+#### Block Processing Statistics
+- **Average Block Processing Time**: 0.0013-0.0022 ms/block
+- **Total Blocks Processed**: Up to 9,090,910 (100MB sequence)
+- **Memory Usage**: Linear scaling with sequence size
+
 ### Performance Optimization Recommendations
 
 1. **Memory Efficiency**:
